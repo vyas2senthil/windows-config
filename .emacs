@@ -503,7 +503,7 @@
  '(nnmail-expiry-wait (quote never))
  '(normal-erase-is-backspace nil)
  '(require-final-newline t)
- '(safe-local-variable-values (quote ((major-mode . sh-mode) (py-indent-offset . 4) (sh-indentation . 2) (c-font-lock-extra-types "FILE" "bool" "language" "linebuffer" "fdesc" "node" "regexp") (TeX-master . t) (indent-tab-mode . t))))
+ '(safe-local-variable-values (quote ((c-style . whitesmith) (major-mode . sh-mode) (py-indent-offset . 4) (sh-indentation . 2) (c-font-lock-extra-types "FILE" "bool" "language" "linebuffer" "fdesc" "node" "regexp") (TeX-master . t) (indent-tab-mode . t))))
  '(save-place t nil (saveplace))
  '(senator-minor-mode-hook (quote (ignore)))
  '(session-initialize (quote (de-saveplace session places keys menus)) nil (session))
@@ -906,9 +906,9 @@ Starting from DIRECTORY, look upwards for a cscope database."
                                    (concat (getenv "HOME") "/tmp/for-code-reading/"))))
 	      (throw 'done database-dir)
 	      )
-          (throw 'done (expand-file-name "~/.gtags-dir/")))
+          )
 	(if (string-match "^\\(/\\|[A-Za-z]:[\\/]\\)$" this-directory)
-	    (throw 'done directory))
+            (throw 'done (expand-file-name "~/.gtags-dir/")))
 	(setq this-directory (file-name-as-directory
 			      (file-name-directory
 			       (directory-file-name this-directory))))
