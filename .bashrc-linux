@@ -21,3 +21,4 @@ if [ -n "$BASH_VERSION" ]; then
     . ~/.bashrc-linux-bash
 fi
     
+alias congfu='confluence.sh --user hjbao --server http://bear/confluence --space "~hjbao"  --password `cat ~/.confpass`'
