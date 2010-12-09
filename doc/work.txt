@@ -690,6 +690,7 @@ sudo perl -npe 's/XKBOPTIONS=".*"/XKBOPTIONS="ctrl:nocaps"/g' /etc/default/keybo
 
 firefox chm中文件的名字不应该有 `&#39;`, 这个东西会导致无法用ffchm.sh打开chm文件。
 
+printk:
 
 #include <linux/types.h>
 #include <linux/module.h>
@@ -706,3 +707,6 @@ DP7CM-PD6MC-6BKXT-M8JJ6-RPXGJ
 F4297-RCWJP-P482C-YY23Y-XH8W3
 HH7VV-6P3G9-82TWK-QKJJ3-MXR96
 HCQ9D-TVCWX-X9QRG-J4B2Y-GR2TT
+
+211.103.252.242 bear2
+60.28.209.148 wowpad.ee168.cn
