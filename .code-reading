@@ -156,3 +156,21 @@ pmu之外的外部电源用的是哪个gpio
             ...
             {
     =>          Ext_TPS72012PmuSupply_LDO,
+
+****************
+注册中断的方法：
+
+    /home/bhj/src/rayzerlink-ventana/kernel/arch/arm/mach-tegra/odm_kit/platform/accelerometer/nvodm_accelerometer_kxtf9.c:385:     if (NvOdmGpioInterruptRegister(hDevice->hGpioINT,
+        static NvBool ConfigInterrupt(NvOdmAccelHandle hDevice)
+        {
+            ...
+    =>      if (NvOdmGpioInterruptRegister(hDevice->hGpioINT,
+
+****************
+这里应该是每个i2c上选的哪个pinmux配置？
+
+    /home/bhj/src/rayzerlink-ventana/hardware/tegra/odm/ventana/odm_kit/query/nvodm_query_pinmux.c:43: static const NvU32 s_NvOdmPinMuxConfig_I2c[] = {
+        static const NvU32 s_NvOdmPinMuxConfig_Twc[] = {
+            0
+        ...
+    =>  static const NvU32 s_NvOdmPinMuxConfig_I2c[] = {

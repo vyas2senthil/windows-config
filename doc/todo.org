@@ -151,7 +151,37 @@ git clone git://github.com/baohaojun/windows-config.git
 
 * nvidia project
 
+** TODO LCD screen is inverted, we are viewing the normal position with the worst viewpoint
+
 ** TODO acore process force close report to nvidia
+
+** TODO touch dies
+
+** TODO power sleep 
+
+** TODO power off the pad ( the power key should get a dialog )
+
+** TODO accelerometor dies
+
+./wi2cb.sh 0x3 0xf 0x1b 0xc7
+
+# the following will clean the interupt pin.
+./ri2cb.sh 0x3 0xf 0x1a 1
+nvgpio n 4 = 108
+
+The above seems to put it back into work. 
+
+** TODO compass HAL integrate
+
+** TODO battery driver
+The I2C can be scanned now. We need change the i2c-2 default config to config2, not the default config1.
+** DONE remove the mouse cursor
+
+** TODO BT
+
+Holman 建议bt需要先make discoverable，再发送文件就能成功，我已经验证过，必须先discoverable，再disable discovery，然后就能接收文件。
+
+** TODO WIFI unstable
 
 * sawfish ifind, write it like my Windows version
 
