@@ -782,3 +782,8 @@ rfa 'git diff --name-status $REPO_LREV|grep . && pwd && echo'
 shift + space怎么改掉：
 
     or 'HKEY_CURRENT_USER\Control Panel\Input Method\Hot Keys\00000011'
+
+
+rfa 'set -x; command git co -b gingerbread-tegra origin/`tbranch`'
+
+xmlstarlet sel -t -m //project -v @path -n default.xml 
