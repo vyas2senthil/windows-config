@@ -112,6 +112,14 @@
             <description value="scrolls a line down" />
           </row>
           <row>
+            <textbox id="ViScrollLeft" value="H" />
+            <description value="scrolls left" />
+          </row>
+          <row>
+            <textbox id="ViScrollRight" value="L" />
+            <description value="scrolls right" />
+          </row>
+          <row>
             <textbox id="ViPreviousTab" value="p" />
             <description value="moves to the previous tab" />
           </row>
@@ -147,6 +155,14 @@
           <column />
         </columns>
         <rows>
+          <row>
+            <textbox id="NextPage" value="F" />
+            <description value="moves to the next page" />
+          </row>
+          <row>
+            <textbox id="ReloadPage" value="R" />
+            <description value="reloads the page" />
+          </row>
           <row>
             <textbox id="ViScrollTop" value="&lt;" />
             <description value="scrolls to the top" />
@@ -388,12 +404,20 @@
             <description value="copy title and url" />
           </row>
           <row>
-            <textbox id="WebSearch" value="C-xC-s" />
+            <textbox id="WebSearch" value="C-xC-e" />
             <description value="web search" />
           </row>
           <row>
             <textbox id="MapSearch" value="C-xC-a" />
             <description value="map search" />
+          </row>
+          <row>
+            <textbox id="SavePage" value="C-xC-s" />
+            <description value="save page" />
+          </row>
+          <row>
+            <textbox id="SelectAll" value="C-xh" />
+            <description value="selects all" />
           </row>
         </rows>
       </grid>
