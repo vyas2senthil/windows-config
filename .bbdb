@@ -6,7 +6,7 @@
 ["all" nil nil nil nil nil ("all@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["allen" nil nil nil nil nil ("allen@goodix.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Yu" "Bai" ("y. bai") nil nil nil ("ybai@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
-["haojun" "bao" nil nil nil nil ("haojun.bao@rayzerlink.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
+["haojun" "bao" ("haojun") nil nil nil ("haojun.bao@rayzerlink.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-22")) nil]
 ["Haojun" "Bao" ("Bao Haojun at Letou") nil nil nil ("hjbao@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
 ["bd" "" nil nil nil nil ("bd@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
 ["Shawn" "Bow" nil nil nil nil ("shbow@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
