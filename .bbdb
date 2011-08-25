@@ -109,6 +109,7 @@
 ["rui" nil nil nil nil nil ("rui.wang@hynix.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Ming" "Shi" nil nil nil nil ("mshi@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Jinglin" "Shu" nil nil nil nil ("jlshu@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
+["SKORKS" "" nil nil nil nil ("askorkin@gmail.com") ((creation-date . "2011-08-25") (timestamp . "2011-08-25")) nil]
 ["slashdot" nil nil nil nil nil ("slashdot@slashdot.org") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Holman" "Song" nil nil nil nil ("hsong@nvidia.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Fengwei" "Sun" nil nil nil nil ("fwsun@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
