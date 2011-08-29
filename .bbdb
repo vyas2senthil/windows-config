@@ -116,7 +116,6 @@
 ["SKORKS" "" nil nil nil nil ("askorkin@gmail.com") ((creation-date . "2011-08-25") (timestamp . "2011-08-25")) nil]
 ["slashdot" nil nil nil nil nil ("slashdot@slashdot.org") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Beijing" "SoftEther" nil nil nil nil ("se-china@softether.co.jp") ((creation-date . "2011-08-25") (timestamp . "2011-08-25")) nil]
-["SoftwareEngineering" "" nil nil nil nil ("groups-noreply@linkedin.com") ((creation-date . "2011-08-29") (timestamp . "2011-08-29")) nil]
 ["Holman" "Song" nil nil nil nil ("hsong@nvidia.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Fengwei" "Sun" nil nil nil nil ("fwsun@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Hao" "Sun" nil nil nil nil ("hsun@hzwowpad.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
