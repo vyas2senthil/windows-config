@@ -137,7 +137,6 @@
 ["team-qa" "" nil nil nil nil ("team-qa@eee168.com") ((creation-date . "2011-08-30") (timestamp . "2011-08-30")) nil]
 ["team-system" nil nil nil nil nil ("team-system@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["team-test" nil nil nil nil nil ("team-test@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
-["The Gmail" "Team" nil nil nil nil ("post@gwene.org") ((creation-date . "2011-09-01") (timestamp . "2011-09-01")) nil]
 ["Wow" "Team" ("wowteam") nil nil nil ("wowteam@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["tideyingmail" "" nil nil nil nil ("tideyin@gmail.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["尹涛" "Tide" ("tide yin" "Tide Yin RayzerLink" "tide") nil nil nil ("tide.yin@rayzerlink.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
