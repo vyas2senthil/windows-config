@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+cd ${1:-~/windows-config}
+git add . 
+git commit -m mf ||true
+rb=from-mac/`ifconfig|grep HWaddr|head -n 1|perl -npe 's/.*HWaddr //; s/:/-/g; s/\s//g;'`-`hostname`
+git diff --quiet origin/$rb || git push origin HEAD:$rb
