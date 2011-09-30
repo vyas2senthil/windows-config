@@ -216,7 +216,7 @@
 ["Weifeng" "Zhou" nil nil nil nil ("wfzhou@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Xuewen" "Zhou" ("xwzhou") nil nil nil ("xwzhou@hzwowpad.com") ((creation-date . "2011-08-25") (timestamp . "2011-08-30")) nil]
 ["Zhongjie" "Zhu" ("zjzhu") nil nil nil ("zjzhu@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
-["包昊军" "" ("Bao Haojun" "baohaojun" "Haojun Bao") nil nil nil ("baohaojun@gmail.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-22")) nil]
+["包昊军" "" ("昊军 包" "Bao Haojun" "baohaojun" "Haojun Bao") nil nil nil ("baohaojun@gmail.com") ((creation-date . "2011-08-18") (timestamp . "2011-09-30")) nil]
 ["孙卫" nil nil nil nil nil ("sunwei@trainsilicon.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Simon Wang (\"王\" \"" "彥超\")" nil nil nil nil ("simonwang@supreme.com.tw") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["曹宇" "" ("Yu Cao" "nunocao") nil nil nil ("nunocao@eee168.com") ((creation-date . "2011-08-25") (timestamp . "2011-08-25")) nil]
