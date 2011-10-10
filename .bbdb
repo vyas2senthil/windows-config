@@ -285,5 +285,6 @@
 ["王登彪" "" nil nil nil nil ("wangdb@woanware.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["范尧迦" "" ("Yaojiao Fan") nil nil nil ("yjfan@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-22")) nil]
 ["志勇" "蒋" nil nil nil nil ("trustjiang@hotmail.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
+["赵小波" "" nil nil nil nil ("zhaoxb@greatwall.com.cn") ((creation-date . "2011-10-10") (timestamp . "2011-10-10")) nil]
 ["박민철" nil ("mcpark") nil nil nil ("mcpark95@samsung.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["손호성" nil ("chris") nil nil nil ("chris.son@samsung.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
