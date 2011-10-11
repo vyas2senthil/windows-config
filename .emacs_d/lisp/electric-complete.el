@@ -22,9 +22,18 @@
 (global-set-key [(meta s) (return)] 'easy-regexp-display-abbrev)
 
 (defun easy-regexp-display-abbrev ()
-  "Simplify writing the regexp. Some thing like \"sthe.\" will be generated as 
-\"s.*?t.*?h.*?e\\W\", the rule is, for each 2 \\w character, fill in a \".*?\" pattern
-and the original pattern should be looked for backwards with \\w and \\."
+  "Simplify writing the regexp. If we are looking back at, for
+e.g., \"sthe='\", the regexp for completion should be
+\"s.*?t.*?h.*?e.*?=.*?'\". That is, fill in a \".*?\" pattern
+between each 2 characters.
+
+The original pattern should be looked backwards for the second
+word boundary \\b. So that if we are looking back at:
+
+   [{)}*& aonehua naoehu[)+{*
+
+we will get the pattern \"naoehu[)+{*\"
+"
   (interactive)
   (let* (reg-part1
          reg-part2 
@@ -54,7 +63,7 @@ and the original pattern should be looked for backwards with \\w and \\."
         (setq char (car re-list)
               re-list (cdr re-list))
 
-        (when (and (> nth 0) (<= nth len1))
+        (when  (> nth 0)
           (setq new-re-list (append (nreverse (string-to-list ".*?")) new-re-list)))
         
         (if (eq char ?.)
