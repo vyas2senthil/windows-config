@@ -101,7 +101,7 @@
 ["Fengjuan" "Li" nil nil nil nil ("fjli@hzwowpad.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["lifuxin" "" nil nil nil nil ("lifuxin2001@yahoo.com.cn") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["Guoguang" "Li" ("ggli") nil nil nil ("ggli@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-19")) nil]
-["Hui" "Li" nil nil nil nil ("hli@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
+["Hui" "Li" nil nil nil nil ("lih@marvell.com" "hli@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-10-11")) nil]
 ["Jinsong" "Li" nil nil nil nil ("jsli@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["like" "li" ("Ke Li") nil nil nil ("like_li@msn.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["Na" "Li" nil nil nil nil ("nali@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
