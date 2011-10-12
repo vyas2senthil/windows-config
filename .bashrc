@@ -11,7 +11,6 @@ alias ll='ls -l --show-control-chars'                              # long list
 alias la='ls -A --show-control-chars'                              # all but . and ..
 alias l='ls -CFl --show-control-chars --block-size=1'                              #
 alias vi=vim
-export EDITOR=vim
 export HISTSIZE=2000
 export HISTFILESIZE=100000
 . ~/.bashrc-public

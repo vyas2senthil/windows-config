@@ -137,6 +137,12 @@ function rbcd()
     ((NUM--))
     cd_bhj "${dirs[$NUM]}"
 }
+
+function re()
+{
+    echo 'error: re should never be executed!'
+}
+
 alias cd=cd_bhj
 alias rcd='cd .repo/manifests'
 alias rs="rfa 'git diff \$REPO_LREV|cat; git st -s|grep . && echo \`pwd\`'"
