@@ -288,6 +288,7 @@
 ["张欢" "" nil nil nil nil ("zhangh@woanware.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["张鹏" "" ("zhangpeng") nil nil nil ("zhangpeng@greatwall.com.cn") ((creation-date . "2011-08-18") (timestamp . "2011-10-08")) nil]
 ["Simon Wang (\"王\" \"" "彥超\")" nil nil nil nil ("simonwang@supreme.com.tw") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
+["新浪微博" "" nil nil nil nil ("miniblog_support@vip.sina.com") ((creation-date . "2011-10-16") (timestamp . "2011-10-16")) nil]
 ["曹宇" "" ("Yu Cao" "nunocao") nil nil nil ("nunocao@eee168.com") ((creation-date . "2011-08-25") (timestamp . "2011-08-25")) nil]
 ["曹旭" "" nil nil nil nil ("caox@woanware.com") ((creation-date . "2011-10-11") (timestamp . "2011-10-11")) nil]
 ["李西军" "" nil nil nil nil ("lixijun@greatwall.com.cn") ((creation-date . "2011-10-11") (timestamp . "2011-10-11")) nil]
