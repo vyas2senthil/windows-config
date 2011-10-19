@@ -301,7 +301,6 @@
 ["王登彪" "" nil nil nil nil ("wangdb@woanware.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["百度空间" "" nil nil nil nil ("space_invite@baidu.com") ((creation-date . "2011-10-15") (timestamp . "2011-10-15")) nil]
 ["范尧迦" "" ("Yaojiao Fan") nil nil nil ("yjfan@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-22")) nil]
-["茹忆" "" nil nil nil nil ("yru@eee168.co") ((creation-date . "2011-10-17") (timestamp . "2011-10-17")) nil]
 ["茹忆" "" ("Roy" "Yi Ru") nil nil nil ("yru@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-10-13")) nil]
 ["志勇" "蒋" nil nil nil nil ("trustjiang@hotmail.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["赵小波" "" nil nil nil nil ("zhaoxb@greatwall.com.cn") ((creation-date . "2011-10-10") (timestamp . "2011-10-10")) nil]
