@@ -7,6 +7,7 @@
 ["admin" nil nil nil nil nil ("admin@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["all" nil nil nil nil nil ("all@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["allen" nil nil nil nil nil ("allen@goodix.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
+["Apple" "" nil nil nil nil ("News_Asia@insideapple.apple.com") ((creation-date . "2011-10-24") (timestamp . "2011-10-24")) nil]
 ["aupbli" "" nil nil nil nil ("aupbli@hotmail.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["Yu" "Bai" ("yubai") nil nil nil ("yubai@marvell.com") ((creation-date . "2011-10-11") (timestamp . "2011-10-18")) nil]
 ["Yu" "Bai" ("y. bai") nil nil nil ("ybai@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
