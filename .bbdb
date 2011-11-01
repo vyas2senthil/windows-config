@@ -198,6 +198,7 @@
 ["Cai" "Tingting" nil nil nil nil ("cttleaf@163.com") ((creation-date . "2011-08-22") (timestamp . "2011-08-22")) nil]
 ["Bo" "Tong" ("TongBo") nil nil nil ("btong@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-22")) nil]
 ["tomwang" "trainsilicon" nil nil nil nil ("tom@trainsilicon.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
+["SourceForge net" "Update" nil nil nil nil ("sourceforge@newsletters.sourceforge.net") ((creation-date . "2011-11-01") (timestamp . "2011-11-01")) nil]
 ["An" "Wang" nil nil nil nil ("awang@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Coco" "Wang" ("k. wang" "CocoWang" "Ke Wang") nil nil nil ("kwang@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Guangfu" "Wang" nil nil nil nil ("gfwang@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
