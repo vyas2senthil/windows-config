@@ -99,7 +99,6 @@
 ["Kristina" "" ("Jinglin Shu") nil nil nil ("jlshu@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-09-01")) nil]
 ["leader" nil nil nil nil nil ("leader@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["leaders" "" nil nil nil nil ("leaders@eee168.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
-["Leafnode" "" nil nil nil nil ("news@hjbao-e064.eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
 ["Bruce" "LEE" ("brucejr") nil nil nil ("brucejr@samsung.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
 ["Xah" "Lee" nil nil nil nil ("xahlee@gmail.com") ((creation-date . "2011-08-24") (timestamp . "2011-08-24")) nil]
 ["Hong" "Liang" nil nil nil nil ("hongl@marvell.com" "hliang@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-10-09")) nil]
