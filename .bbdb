@@ -11,6 +11,7 @@
 ["aupbli" "" nil nil nil nil ("aupbli@hotmail.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["Yu" "Bai" ("yubai") nil nil nil ("yubai@marvell.com") ((creation-date . "2011-10-11") (timestamp . "2011-10-18")) nil]
 ["Yu" "Bai" ("y. bai") nil nil nil ("ybai@eee168.com") ((creation-date . "2011-08-18") (timestamp . "2011-08-18")) nil]
+["Haojun" "Bao" ("Bao Haojun at Marvell") nil nil nil ("hjbao@marvell.com") ((creation-date . "2011-11-03") (timestamp . "2011-11-03")) nil]
 ["Haojun" "Bao" ("Bao Haojun at Letou") nil nil nil ("hjbao@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
 ["Kejie" "Bao" nil nil nil nil ("baokejie@gmail.com") ((creation-date . "2011-10-09") (timestamp . "2011-10-09")) nil]
 ["bd" "" nil nil nil nil ("bd@eee168.com") ((creation-date . "2011-08-19") (timestamp . "2011-08-19")) nil]
