@@ -74,8 +74,10 @@ regedit /s no-control-period.reg
 regedit /s keymap-win.reg
 
 mkdir /c/etc/ywb/ -p
-touch /c/etc/ywb/disable.rc
-echo emacs.exe >  /c/etc/ywb/disable.rc
+find ~/etc/ywb/exclude -type f|xargs bash -c 'for x in "$@"; do echo $(basename $x); done' xx > /c/etc/ywb/disable.rc
+rm -f ~/user ~/.mozilla
+ln -s $(cygpath -u "$USERPROFILE") ~/user
+ln -s ~/user/Application\ Data/Mozilla  ~/.mozilla
 
 echo -n "c:/python31/python.exe" \"$(cygpath -aml ~/windows-config/gcode/scim-cs/ime-py/ime-server.py)\" > /cygdrive/c/ime-server.rc
 echo "After check out success!"
