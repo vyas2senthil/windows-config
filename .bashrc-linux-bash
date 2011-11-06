@@ -75,5 +75,5 @@ function mcd() {
 }
 
 function rdesktop() {
-    command rdesktop -K -g $(xrandr |grep '\*'|pn 1) $1 -u ${2:-$USER} -p ${3:-123456}
+    command rdesktop -K -a 24 -g $(xrandr |grep '\*'|pn 1) $1 -u ${2:-$USER} -p ${3:-123456}
 }
