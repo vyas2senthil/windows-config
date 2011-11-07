@@ -28,9 +28,10 @@ command renew-xauth
 killall syndaemon
 syndaemon -i 1 -d
 
-for x in $(find ~/external/sawfish/start -type f); do
+for x in ~/external/sawfish/start/*; do
     (
-	"$x"&
+	echo executing "$x"
+	test -e "$x" && "$x"&
     )
 done
 
