@@ -53,7 +53,8 @@
 
 (require 'csharp-mode)
 (require 'w3m)
-(require 'tramp)
+(unless (eq system-type 'windows-nt)
+  (require 'tramp))
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 (require 'ibuffer)
