@@ -159,6 +159,7 @@
 ["Tom" "Zhuang" nil nil nil nil ("yzhuang@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["zhuyf" "" nil nil nil nil ("zhuyf@zjgsu.edu.cn") ((creation-date . "2011-11-21") (timestamp . "2011-11-21")) nil]
 ["zhuyf" "" nil nil nil nil ("zhuyf@zjgs.edu.cn") ((creation-date . "2011-11-21") (timestamp . "2011-11-21")) nil]
+["ztfang" "" nil nil nil nil ("ztfang@hotmail.com") ((creation-date . "2011-11-22") (timestamp . "2011-11-22")) nil]
 ["zwhe" "" nil nil nil nil ("zwhe@hdu.edu.cn") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["婴之宝" "" nil nil nil nil ("chenyueyzb@126.com") ((creation-date . "2011-11-19") (timestamp . "2011-11-19")) nil]
 ["新浪微博" "" nil nil nil nil ("miniblog_support@vip.sina.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
