@@ -105,6 +105,7 @@
 ["Xu" "Peng" nil nil nil nil ("pengxu@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["lina" "pro" ("Na Li") nil nil nil ("lina.pro@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-21")) nil]
 ["Chen" "Qian" nil nil nil nil ("jeffqian@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
+["Jason" "Qiang" nil nil nil nil ("jason.qiang@eruishi.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["Zhiheng" "Qi" nil nil nil nil ("zhqi@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["Hailin" "Ren" nil nil nil nil ("hailinr@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["rwang" "" nil nil nil nil ("rwang@cad.zju.edu.cn") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
