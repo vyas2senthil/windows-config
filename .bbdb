@@ -118,6 +118,7 @@
 ["SourceForge net" "Update" nil nil nil nil ("sourceforge@newsletters.sourceforge.net") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["Hewei" "Wang" nil nil nil nil ("heweiw@marvell.com") ((creation-date . "2011-11-17") (timestamp . "2011-11-17")) nil]
 ["huanlong" "wang" nil nil nil nil ("wanghuanlong@yahoo.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
+["Rui" "Wang" nil nil nil nil ("rui.wang@gmail.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["Wing" "Wang" nil nil nil nil ("wingwang@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["Xi" "Wang" nil nil nil nil ("xiwang78@gmail.com") ((creation-date . "2011-11-21") (timestamp . "2011-11-21")) nil]
 ["Xianfeng" "Wang" nil nil nil nil ("xianfeng@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
