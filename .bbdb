@@ -6,6 +6,7 @@
 ["AL-ChinaFacilities" "" nil nil nil nil ("AL-ChinaFacilities@marvell.com") ((creation-date . "2011-11-16") (timestamp . "2011-11-16")) nil]
 ["al-chinafacility" "" nil nil nil nil ("al-chinafacility@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["AL-CorporateSecurity" "" nil nil nil nil ("corporatesecurity@marvell.com") ((creation-date . "2011-11-16") (timestamp . "2011-11-16")) nil]
+["AL-HR-TrainingOps" "" nil nil nil nil ("AL-HR-TrainingOps@marvell.com") ((creation-date . "2011-12-01") (timestamp . "2011-12-01")) nil]
 ["ante" "" ("阳 零零" "ante ling") nil nil nil ("ante_ling@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-30")) nil]
 ["Apple" "" nil nil nil nil ("News_Asia@insideapple.apple.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["Apple" "" nil nil nil nil ("do_not_reply@apple.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
