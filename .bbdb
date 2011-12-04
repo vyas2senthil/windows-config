@@ -143,6 +143,7 @@
 ["SKORKS" "" nil nil nil nil ("askorkin@gmail.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["slashdot" "" nil nil nil nil ("slashdot@slashdot.org") ((creation-date . "2011-11-19") (timestamp . "2011-11-19")) nil]
 ["slzhang" "" nil nil nil nil ("slzhang") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
+["App" "Store" nil nil nil nil ("AppStore@insideapple.apple.com") ((creation-date . "2011-12-04") (timestamp . "2011-12-04")) nil]
 ["Mail Delivery" "Subsystem" nil nil nil nil ("mailer-daemon@googlemail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["sunl" "" nil nil nil nil ("sunl1126@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["support" "" nil nil nil nil ("support@eoemobile.net") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
