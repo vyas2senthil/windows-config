@@ -124,6 +124,7 @@
 ["Magic" "Pan" nil nil nil nil ("mpan@marvell.com") ((creation-date . "2011-11-24") (timestamp . "2011-11-24")) nil]
 ["Edward" "Peng" nil nil nil nil ("epeng@marvell.com") ((creation-date . "2011-11-29") (timestamp . "2011-11-29")) nil]
 ["Xu" "Peng" nil nil nil nil ("pengxu@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
+["The Code" "Project" nil nil nil nil ("mailout@maillist.codeproject.com") ((creation-date . "2011-12-07") (timestamp . "2011-12-07")) nil]
 ["Chen" "Qian" nil nil nil nil ("jeffqian@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["Jason" "Qiang" nil nil nil nil ("jason.qiang@eruishi.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["Weizhong" "Qian" nil nil nil nil ("wzqian@marvell.com") ((creation-date . "2011-11-29") (timestamp . "2011-11-29")) nil]
