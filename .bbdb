@@ -85,6 +85,7 @@
 ["jiangzb" "" nil nil nil nil ("jiangzb@cn.ibm.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["jianmin" "" nil nil nil nil ("jianmin.jim@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["ren" "jie" ("任捷") nil nil nil ("ren.jie@zte.com.cn" "dickrj@163.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
+["Liang" "Jin" nil nil nil nil ("Liang.Jin@microsoft.com") ((creation-date . "2011-12-12") (timestamp . "2011-12-12")) nil]
 ["lee" "ju" nil nil nil nil ("lh1292002@yahoo.com.cn") ((creation-date . "2011-11-19") (timestamp . "2011-11-19")) nil]
 ["Lou" "Junqing" ("Junqing Lou" "loujunqing") nil nil nil ("loujunqing@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-29")) nil]
 ["Ivan" "Lee" nil nil nil nil ("ilee@marvell.com") ((creation-date . "2011-11-29") (timestamp . "2011-11-29")) nil]
