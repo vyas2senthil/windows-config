@@ -106,6 +106,7 @@
 ["Mixedclass" "" nil nil nil nil ("mixedclass97@gmail.com") ((creation-date . "2011-12-12") (timestamp . "2011-12-12") (notes . "linux")) nil]
 ["Xiaoya" "Mi" nil nil nil nil ("xiaoyami@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["chenliang" "mu" nil nil nil nil ("chenliang.mu@easyandroid.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
+["Jun" "Nie" nil nil nil nil ("njun@marvell.com") ((creation-date . "2011-12-12") (timestamp . "2011-12-12")) nil]
 ["Sufen" "Niu" nil nil nil nil ("sufenniu@marvell.com") ((creation-date . "2011-12-06") (timestamp . "2011-12-06")) nil]
 ["offlineimap-project" "" nil nil nil nil ("offlineimap-project@lists.alioth.debian.org") ((creation-date . "2011-11-19") (timestamp . "2011-11-19")) nil]
 ["OnlineForms" "" nil nil nil nil ("OnlineForms@marvell.com") ((creation-date . "2011-12-01") (timestamp . "2011-12-01")) nil]
