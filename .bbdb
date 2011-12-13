@@ -194,6 +194,7 @@
 ["Wei" "Zhou" nil nil nil nil ("weizhou@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["Weifeng" "Zhou" nil nil nil nil ("weifzhou@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["Xuan" "Zhou" nil nil nil nil ("xuanzhou@marvell.com") ((creation-date . "2011-11-29") (timestamp . "2011-11-29")) nil]
+["Haojian" "Zhuang" nil nil nil nil ("hzhuang1@marvell.com") ((creation-date . "2011-12-13") (timestamp . "2011-12-13")) nil]
 ["Tom" "Zhuang" nil nil nil nil ("yzhuang@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["何志伟" "" ("zwhe") nil nil nil ("zwhe@hdu.edu.cn") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
 ["何治" "" nil nil nil nil ("hezhi77@gmail.com") ((creation-date . "2011-12-12") (timestamp . "2011-12-12") (notes . "linux")) nil]
