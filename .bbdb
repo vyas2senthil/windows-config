@@ -120,6 +120,7 @@
 ["Zhiheng" "Qi" nil nil nil nil ("zhqi@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["Hailin" "Ren" nil nil nil nil ("hailinr@marvell.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["peng" "rui" ("彭瑞" "rui" "rui peng") nil nil nil ("peng_rui@hotmail.com" "rui.peng@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12")) nil]
+["extranet" "salesadmin" nil nil nil nil ("extranet_salesadmin@marvell.com") ((creation-date . "2011-12-14") (timestamp . "2011-12-14")) nil]
 ["GR-BeiJing" "Sales" nil nil nil nil ("GR-BeiJingSales@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["Nicolas" "Sebrecht" nil nil nil nil ("nicolas.s-dev@laposte.net") ((creation-date . "2011-11-19") (timestamp . "2011-11-19")) nil]
 ["noreply" "secureauth" nil nil nil nil ("noreply_secureauth@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
