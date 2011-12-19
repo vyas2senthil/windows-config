@@ -1460,7 +1460,6 @@ Starting from DIRECTORY, look upwards for a cscope database."
   (interactive)
   (switch-buffer-same-filename t))
 
-(global-set-key [(meta s) ?c] 'switch-buffer-same-filename)
 (global-set-key [(ctrl x) ? ] 'switch-buffer-same-filename)
 (global-set-key [(ctrl x) ?\S- ] 'switch-buffer-same-filename-rev)
 
@@ -1952,4 +1951,5 @@ criteria can be provided via the optional match-string argument "
     (shell-command-on-region start-of-text end-of-text code-text nil t)))
 
 (global-set-key (kbd "M-s g") 'bhj-do-code-generation)
+(global-set-key (kbd "M-s c") (lambda () (interactive) (call-interactively 'compile)))
 (server-start)
