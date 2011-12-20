@@ -9,6 +9,7 @@
 ["AL-HR-TrainingOps" "" nil nil nil nil ("AL-HR-TrainingOps@marvell.com") ((creation-date . "2011-12-01") (timestamp . "2011-12-01")) nil]
 ["Apple" "" nil nil nil nil ("News_Asia@insideapple.apple.com") ((creation-date . "2011-12-20") (timestamp . "2011-12-20")) nil]
 ["Atlassian" "" nil nil nil nil ("sales@mailer.atlassian.com") ((creation-date . "2011-11-25") (timestamp . "2011-11-25")) nil]
+["AutoNotification" "" nil nil nil nil ("AutoNotification@concursolutions.com") ((creation-date . "2011-12-20") (timestamp . "2011-12-20")) nil]
 ["Angel" "Bai" nil nil nil nil ("angelbai@marvell.com") ((creation-date . "2011-11-18") (timestamp . "2011-11-18")) nil]
 ["Yu" "Bai" ("baiyubailey") nil nil nil ("yubai@marvell.com" "baiyubailey@gmail.com") ((creation-date . "2011-11-15") (timestamp . "2011-12-12")) nil]
 ["baohj" "" nil nil nil nil ("baohj_zj@hotmail.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
