@@ -566,7 +566,11 @@
  '(ido-enable-regexp t)
  '(ido-ignore-files (quote ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" ".*\\.\\(loc\\|org\\|mkelem\\)")))
  '(ispell-program-name "aspell")
- '(jira-url "http://192.168.11.11/jira/rpc/xmlrc")
+ '(jira-host "bible")
+ '(jira-url "http://bible/jira/rpc/xmlrpc")
+ '(jira2-host "bible")
+ '(jira2-host-url "http://bible/jira")
+ '(jira2-wsdl-descriptor-url "http://bible/jira/rpc/soap/jirasoapservice-v2?wsdl")
  '(keyboard-coding-system (quote cp936))
  '(lisp-mode-hook (quote ((lambda nil (make-local-variable (quote cscope-symbol-chars)) (setq cscope-symbol-chars "-A-Za-z0-9_")))))
  '(longlines-auto-wrap nil)
@@ -756,7 +760,8 @@
       (color-theme-initialize)
       (require 'color-theme-library))
   (error nil))
-(color-theme-arjen)
+;(color-theme-arjen)
+(load-theme 'wheatgrass)
 ;(w32-register-hot-key [A-tab])
 
 (defun markdown-nobreak-p ()
@@ -1460,7 +1465,6 @@ Starting from DIRECTORY, look upwards for a cscope database."
   (interactive)
   (switch-buffer-same-filename t))
 
-(global-set-key [(meta s) ?c] 'switch-buffer-same-filename)
 (global-set-key [(ctrl x) ? ] 'switch-buffer-same-filename)
 (global-set-key [(ctrl x) ?\S- ] 'switch-buffer-same-filename-rev)
 
@@ -1915,18 +1919,19 @@ in the specified month and year. Month parameter expects a number
 from 1 to 12. Year parameter expects a four digit number. Defaults 
 to the current month when arguments are not provided. Additional search
 criteria can be provided via the optional match-string argument "
-  (interactive)
+  (interactive "sShow tasks before (default: last mon): ")
+  (if (or (not match-string) 
+	  (and (stringp match-string) (string-equal match-string "")))
+      (setq match-string "last mon"))    
   (org-tags-view nil 
 		 (concat
-		  match-string
 		  (format "+CLOSED>=\"[%s]\"" 
-			  (shell-command-to-string "today 'last mon'")))))
+			  (shell-command-to-string (concat "today '" match-string "'"))))))
 
 (load "color-theme-leuven")
 (setq org-src-fontify-natively t)
 (setq org-todo-keywords
-      '((sequence "TODO" "|" "DONE" "CANCELED")
-	(sequence "PE" "|" "PE-DONE" "PE-CANCELED")))
+      '((sequence "TODO" "|" "DONE" "CANCELED")))
 
 (defun bhj-do-code-generation ()
   (interactive)
@@ -1951,4 +1956,12 @@ criteria can be provided via the optional match-string argument "
     (setq  end-of-text (point))
     (shell-command-on-region start-of-text end-of-text code-text nil t)))
 
+(require 'jira2)
+(require 'jira)
+(when (eq system-type 'windows-nt)
+
+  (setq nntp-authinfo-file "~/../.authinfo"
+	auth-sources '((:source "~/../.authinfo" :host t :protocol t))))
+(global-set-key (kbd "M-s g") 'bhj-do-code-generation)
+(global-set-key (kbd "M-s c") (lambda () (interactive) (call-interactively 'compile)))
 (server-start)
