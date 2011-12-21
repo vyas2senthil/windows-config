@@ -262,7 +262,7 @@
 ["许传玺" "" nil nil nil nil ("xucxuc@gmail.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
 ["许江伟" "" ("许江伟" "phil paik" "'江伟 许'" "xujiangwei" "江伟 许") nil nil nil ("phil.paik@samsung.com" "xujiangwei1979@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12") (notes . "linux")) nil]
 ["赖利峰" "" ("lifeng lai") nil nil nil ("lifeng.lai@gmail.com") ((creation-date . "2011-11-22") (timestamp . "2011-12-05")) nil]
-["赵世鑫" "" ("赵世鑫公司" "Zhao Shixin" "赵 世鑫" "Shixin Zhao") nil nil nil ("sxzhao@utstar.com" "sweatsea@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12")) nil]
+["赵世鑫" "" ("赵世鑫公司" "Zhao Shixin" "赵 世鑫" "Shixin Zhao") nil nil nil ("sxzhao@utstar.com" "sweatsea@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12") (notes . "linux")) nil]
 ["邹鲁" "" nil nil nil nil ("zl@myhexin.com") ((creation-date . "2011-11-29") (timestamp . "2011-11-29")) nil]
 ["郑科" "" ("zheng ke" "Colin Zheng") nil nil nil ("zheng_ke@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
 ["金亮" "" ("liang" "liang jin" "ucijim") nil nil nil ("Liang.Jin@microsoft.com" "liang.jin@gmail.com" "ucijim@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12") (notes . "linux")) nil]
