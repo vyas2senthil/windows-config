@@ -276,7 +276,7 @@
 ["金亮" "" ("liang" "liang jin" "ucijim") nil nil nil ("Liang.Jin@microsoft.com" "liang.jin@gmail.com" "ucijim@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12") (notes . "linux")) nil]
 ["金千里" "" ("Qianli Jin") nil nil nil ("aupbli@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
 ["金千里公司" "" nil nil nil nil ("jinql@cn.ibm.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
-["金玲玲" "" ("jin" "jin lingling") nil nil nil ("jin_lingling@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
+["金玲玲" "" ("jin" "jin lingling") nil nil nil ("jinlingling@gmail.com" "jin_lingling@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-26")) nil]
 ["钱骏" "" nil nil nil nil ("qjbss@163.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
 ["陈宇" "" ("chenyufjfz") nil nil nil ("chenyufjfz@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-23")) nil]
 ["陈若愚" "" ("cryfish") nil nil nil ("cryfish2001@sina.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
