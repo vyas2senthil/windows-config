@@ -1958,7 +1958,6 @@ criteria can be provided via the optional match-string argument "
     (shell-command-on-region start-of-text end-of-text code-text nil t)))
 
 (require 'jira2)
-(require 'jira)
 (when (eq system-type 'windows-nt)
 
   (setq nntp-authinfo-file "~/../.authinfo"

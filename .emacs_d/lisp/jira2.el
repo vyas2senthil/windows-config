@@ -940,7 +940,7 @@ Return nil if the field is not found"
      (let ((s "Component(s): "))
        (put-text-property 0 (length s) 'face 'jira2-issue-info-header-face s)
        (insert s))
-     (let ((s (if (cdr (assoc 'name (cdr (assoc 'components issue)))) (cdr (assoc 'name (cdr (assoc 'components issue)))) "None")))
+     (let ((s (if (cdr (assoc 'name (cadr (assoc 'components issue)))) (cdr (assoc 'name (cadr (assoc 'components issue)))) "None")))
        (put-text-property 0 (length s) 'face 'jira2-issue-info-face s)
        (insert s "\n\n"))
 
@@ -1034,6 +1034,11 @@ Return nil if the field is not found"
 (defun jira2-add-comment (issue-key comment)
   "Adds a comment to an issue"
   (jira2-call 'addComment issue-key `((body . ,comment))))
+
+(defun jira2-edit-comment (comment-id comment)
+  "Edit the comment body for comment-id"
+  (jira2-call 'editComment `((id . ,comment-id)
+				      (body . ,comment))))
 
 (defun jira2-create-issue (r-issue-struct)
   "Creates an issue in JIRA2 from a Hashtable object."
