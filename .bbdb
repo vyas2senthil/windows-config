@@ -281,6 +281,7 @@
 ["陈宇" "" ("chenyufjfz") nil nil nil ("chenyufjfz@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-11-23")) nil]
 ["陈若愚" "" ("cryfish") nil nil nil ("cryfish2001@sina.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
 ["丁" "靓子" ("dingliangzi") nil nil nil ("dingliangzi3336@163.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-06")) nil]
+["高峰" "" nil nil nil nil ("gf.james@gmail.com") ((creation-date . "2011-12-27") (timestamp . "2011-12-27")) nil]
 ["鲍可捷" "" ("鲍 可捷" "bao bao" "Kejie Bao" "baokejie") nil nil nil ("baokejie@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
 ["黄昶" "" ("HUANG Alan" "黄昶" "alan huang" "Chang Huang" "Alan Huang") nil nil nil ("alan.huang@insead.edu" "changhuang@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12")) nil]
 ["王锐" "（US）" ("Rui Wang") nil nil nil ("ruiwang@cs.umass.edu" "rui.wang@gmail.com") ((creation-date . "2011-11-23") (timestamp . "2011-12-05")) nil]
