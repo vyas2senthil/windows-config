@@ -94,6 +94,7 @@
 ["liangjin" "" nil nil nil nil ("liangjin@microsoft.com") ((creation-date . "2011-12-23") (timestamp . "2011-12-23")) nil]
 ["Wei" "Liang" nil nil nil nil ("liangwei@marvell.com") ((creation-date . "2011-11-22") (timestamp . "2011-11-22")) nil]
 ["Cheng" "Liao" nil nil nil nil ("chengl@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
+["dumas" "liao" nil nil nil nil ("dumas.liao@gmail.com") ((creation-date . "2011-12-27") (timestamp . "2011-12-27")) nil]
 ["Fengjuan" "Li" nil nil nil nil ("fjli@marvell.com") ((creation-date . "2011-11-28") (timestamp . "2011-11-28")) nil]
 ["Guangyu" "Li" nil nil nil nil ("liguangy@marvell.com") ((creation-date . "2011-12-19") (timestamp . "2011-12-19")) nil]
 ["Hui" "Li" nil nil nil nil ("lih@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
