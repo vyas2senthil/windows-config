@@ -161,6 +161,7 @@
 ["Lily" "Tan" nil nil nil nil ("lltan@marvell.com") ((creation-date . "2011-11-22") (timestamp . "2011-11-22")) nil]
 ["Li" "Tao" nil nil nil nil ("taoli@marvell.com") ((creation-date . "2011-11-24") (timestamp . "2011-11-24")) nil]
 ["Xuefeng" "Tian" nil nil nil nil ("tianxuef@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
+["Cai" "Tingting" nil nil nil nil ("cttleaf@163.com") ((creation-date . "2011-12-28") (timestamp . "2011-12-28")) nil]
 ["TongBo" "" nil nil nil nil ("bo.tong@easyandroid.com") ((creation-date . "2011-11-23") (timestamp . "2011-11-23")) nil]
 ["SourceForge net" "Update" nil nil nil nil ("sourceforge@newsletters.sourceforge.net") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["Vimeo" "" nil nil nil nil ("no-reply@vimeo.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
