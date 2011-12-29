@@ -74,6 +74,7 @@
 ["Ning" "He" nil nil nil nil ("ninghe@marvell.com") ((creation-date . "2011-12-19") (timestamp . "2011-12-19")) nil]
 ["Francine" "Hennessey" nil nil nil nil ("franh@marvell.com") ((creation-date . "2011-11-15") (timestamp . "2011-11-15")) nil]
 ["hezhi" "" nil nil nil nil ("hezhi@cad.zju.edu.cn") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
+["Bo" "Huang" nil nil nil nil ("bohuang@marvell.com") ((creation-date . "2011-12-29") (timestamp . "2011-12-29")) nil]
 ["Jinhua" "Huang" nil nil nil nil ("jhhuang@marvell.com") ((creation-date . "2011-11-29") (timestamp . "2011-11-29")) nil]
 ["Shoukat" "Hussain" nil nil nil nil ("Shoukat.Hussain@alfuttaim.ae") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["Marvell HR" "Intern" nil nil nil nil ("marvellinternfang@163.com") ((creation-date . "2011-11-24") (timestamp . "2011-11-24")) nil]
