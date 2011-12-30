@@ -272,6 +272,7 @@
 ["董颖涛" "" ("董 颖涛" "dongyingtao") nil nil nil ("dongyingtao@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-05")) nil]
 ["蒋志勇" "" ("'志勇 蒋'" "志勇 蒋") nil nil nil ("jiangzhiyong@spacechina.com" "trustjiang@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12")) nil]
 ["蔡中堂" "" nil nil nil nil ("zhongtangcai@hotmail.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
+["蛇-普利斯基" "" nil nil nil nil ("hezhi1977@qq.com") ((creation-date . "2011-12-30") (timestamp . "2011-12-30") (notes . "linux")) nil]
 ["解超" "" ("xiechao linux" "xiechao" "xiechao mail") nil nil nil ("xiechao.linux@gmail.com" "xiechao.mail@gmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12")) nil]
 ["许传玺" "" nil nil nil nil ("xucxuc@gmail.com") ((creation-date . "2011-12-05") (timestamp . "2011-12-05")) nil]
 ["许江伟" "" ("许江伟" "phil paik" "'江伟 许'" "xujiangwei" "江伟 许") nil nil nil ("phil.paik@samsung.com" "xujiangwei1979@hotmail.com") ((creation-date . "2011-11-20") (timestamp . "2011-12-12") (notes . "linux")) nil]
