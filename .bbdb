@@ -33,6 +33,7 @@
 ["coolswinoff" "coolswine" nil nil nil nil ("coolswine@yandex.ru") ((creation-date . "2011-12-22") (timestamp . "2011-12-22")) nil]
 ["SoftEther" "Corporation" nil nil nil nil ("secom@softether.co.jp") ((creation-date . "2011-11-20") (timestamp . "2011-11-20")) nil]
 ["CR" "" nil nil nil nil ("Srv-sh4-cr-502b@marvell.com") ((creation-date . "2011-11-24") (timestamp . "2011-11-24")) nil]
+["Marco" "Craveiro" nil nil nil nil ("marco.craveiro@gmail.com") ((creation-date . "2012-01-01") (timestamp . "2012-01-01") (notes . "emacs")) nil]
 ["dashboard-hackers" "" nil nil nil nil ("dashboard-hackers@gnome.org") ((creation-date . "2011-12-20") (timestamp . "2011-12-20")) nil]
 ["AL-Help" "Desk" nil nil nil nil ("help@marvell.com") ((creation-date . "2011-11-18") (timestamp . "2011-11-18")) nil]
 ["Service" "Desk" nil nil nil nil ("noreply@marvell.com") ((creation-date . "2011-12-06") (timestamp . "2011-12-06")) nil]
