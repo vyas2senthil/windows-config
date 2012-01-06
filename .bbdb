@@ -1,8 +1,12 @@
 ;; -*-coding: utf-8-emacs;-*-
 ;;; file-version: 6
+["Jonathan" "Arkell" nil nil nil nil ("jonathana@criticalmass.com") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
 ["Yu" "Bai" nil nil nil nil ("yubai@marvell.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
+["Bastien" "" nil nil nil nil ("bzg@altern.org") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
 ["emacs-orgmode" "" nil nil nil nil ("emacs-orgmode@gnu.org") ((creation-date . "2012-01-02") (timestamp . "2012-01-02")) nil]
 ["Hong" "Liang" nil nil nil nil ("hongl@marvell.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
+["nicholas" "" nil nil nil nil ("nicholas.dokos@hp.com") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
+["OSiUX" "" nil nil nil nil ("xuiso@osiux.com.ar") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
 ["Sebastien" "Vauban" nil nil nil nil ("wxhgmqzgwmuf@spammotel.com") ((creation-date . "2012-01-03") (timestamp . "2012-01-03")) nil]
 ["Chendun" "Wu" nil nil nil nil ("filon2008@gmail.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["Vincent" "Ying" nil nil nil nil ("vincenty@marvell.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
