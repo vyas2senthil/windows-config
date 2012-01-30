@@ -1,16 +1,32 @@
 #!/bin/bash
 
-set -ex
+set -e
 crontab -l > ~/.crontab.tmp
 user_cron=true
-diff ~/.crontab.tmp ~/.crontab && user_cron=false
+diff ~/.crontab.tmp ~/.crontab >/dev/null 2>&1 && user_cron=false
 test $PWD = ~ && cd ~/windows-config/
-git fetch origin
+git-clean-mac-branches-local
+git fetch origin >/dev/null 2>&1 
 for x in $(git branch -a |grep 'remotes.*from-mac'|grep -v origin-w); do
     remote=$(echo $x|awk -F/ '{print $2}')
     branch=$(echo $x|perl -npe 's/.*?from-mac/from-mac/')
-    git pull $remote $branch
+    git fetch $remote $branch >/dev/null 2>&1 
+    if git branch --contains FETCH_HEAD |grep -q '^\*'; then
+	echo no need to merge $branch, it is already '*contained*' in HEAD
+	continue;
+    else
+	current=$(git log -1|head -n 1|pn 2)
+	git merge FETCH_HEAD >/dev/null 2>&1 
+	if git diff --quiet $current; then
+	    echo $remote/$branch contains no diff after merge, reset it
+	    git reset --hard $current
+	else
+	    echo merged from $branch
+	    continue
+	fi
+    fi
 done
 test $user_cron = false && { diff ~/.crontab.tmp ~/.crontab || crontab ~/.crontab; }
 git submodule init
 git submodule update
+git submodule foreach 'bash -c "git-pull-mac&"' | grep . 

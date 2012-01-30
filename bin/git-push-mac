@@ -1,1 +1,65 @@
-git-mac-branch
+#!/bin/bash
+set -e
+
+hold_up=1
+if test -e ~/.git-mac-no; then
+    if tty >/dev/null 2>&1; then
+	rm ~/.git-mac-no
+    else
+	exec </dev/null
+	hold_up=5
+    fi
+fi
+cd ${1:-~/windows-config}
+
+test "$(git config remote.origin.url | cut -b 1-5)" = https && exit 0 
+if git status -s|
+    pn 2|
+    xargs -d \\n -I %s stat -c %Y %s|
+    perl -ne '
+chomp; 
+$time = $time < $_ ? $_ : $time; 
+END{
+    use POSIX; 
+    print "time is $time\n";
+    if (time() - $time > '$hold_up' * 3600) {
+        exit(0);
+    } else {
+        exit(-1);
+    }
+}'; then
+    echo "your changes are made $hold_up hour ago, should commit now"
+else
+    if tty >/dev/null 2>&1; then
+	echo commiting even though you made changes only recently, as you wish
+    elif test "$GITPUSHMACFORCE" != true; then
+	if test $(date +%H) -gt 20 ; then #if it's late in the night, we may be at home, so lets reminder it
+	    bhj-notify git-push-mac "not commiting because you made changes only recently, and we are not on any console"
+	fi
+	exit
+    fi
+fi
+
+
+if git submodule foreach 'bash -c "export GITPUSHMACFORCE=true; git-push-mac . || echo hello $(pwd) failed&"' | tee /dev/stderr | grep "^hello.*failed$";
+then
+    exit -1
+else
+    true
+fi
+
+git add . 
+
+git commit -m mf ||true
+rb=$(from-mac)
+if git branch --contains HEAD -a |grep -q from-mac; then 
+    echo HEAD already containd in a remote branch, no need to push
+    exit
+fi
+if test "$(git config remote.origin.url | cut -b 1-4)" = git:; then
+    git remote add origin-w $(git config remote.origin.url | perl -npe 's,^git://,git@,; s,/,:,') || true
+    git push origin-w HEAD:$rb
+    git fetch origin
+else
+    git push origin HEAD:$rb
+fi
