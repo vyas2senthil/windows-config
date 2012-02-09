@@ -2144,7 +2144,6 @@ criteria can be provided via the optional match-string argument "
       (erc-message "PRIVMSG" (concat (erc-default-target) " identify " bitlbee-password))
       (erc-message "PRIVMSG" (concat (erc-default-target) " account 0 on")
       (erc-message "PRIVMSG" (concat (erc-default-target) " account 1 on"))))))
-(setq bitlbee-reconnect-timer (run-with-timer 0 60 'bitlbee-connect))
 
 (setq erc-keywords '((".*Online.*" (:foreground "green"))
                      (".*Busy" (:foreground "red"))
