@@ -1,5 +1,5 @@
 #!/bin/bash
 test $# = 0 && set -- ""
 for x in "$@"; do 
-    rfa $x 'git diff $REPO_LREV --quiet || (pwd; false)'
-done
+    rfa $x 'if git st -s |grep -q . || test $(git log -1 --pretty=oneline|pn 1) != $REPO_LREV; then pwd; fi '
+done 2>&1 | (cd $(lookup_file .repo/..); tee ./out/repo-changes.log)

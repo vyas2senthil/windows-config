@@ -5,6 +5,8 @@ crontab -l > ~/.crontab.tmp
 user_cron=true
 diff ~/.crontab.tmp ~/.crontab >/dev/null 2>&1 && user_cron=false
 test $PWD = ~ && cd ~/windows-config/
+cd "$(dirname "$(lookup_file .git)")"
+
 git-clean-mac-branches-local
 git fetch origin >/dev/null 2>&1 
 for x in $(git branch -a |grep 'remotes.*from-mac'|grep -v origin-w); do
@@ -16,7 +18,10 @@ for x in $(git branch -a |grep 'remotes.*from-mac'|grep -v origin-w); do
 	continue;
     else
 	current=$(git log -1|head -n 1|pn 2)
-	git merge FETCH_HEAD >/dev/null 2>&1 
+	git merge FETCH_HEAD >/dev/null 2>&1 || {
+	    echo $remote/$branch merge failed
+	    exit -1
+	}
 	if git diff --quiet $current; then
 	    echo $remote/$branch contains no diff after merge, reset it
 	    git reset --hard $current
@@ -30,3 +35,4 @@ test $user_cron = false && { diff ~/.crontab.tmp ~/.crontab || crontab ~/.cronta
 git submodule init
 git submodule update
 git submodule foreach 'bash -c "git-pull-mac&"' | grep . 
+~/bin/after-co-ln-s.sh

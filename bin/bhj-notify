@@ -1,5 +1,22 @@
 #!/bin/bash
-. ~/.new-xauth
+. ~/.new-xauth >/dev/null 2>&1
 label=$1
 shift
-notify-send "$label" "$(echo At $(date):; echo "$@")"
+
+content=
+if test $# != 0; then
+content=$(
+    echo At $(date):; 
+    echo "$@"|perl -ne '
+BEGIN{use HTML::Entities;} 
+chomp;
+print encode_entities($_) . "\n"
+')
+fi
+setsid notification-manager "$label" "$content"  >> ~/.logs/notification-manager.log 2>&1&
+if test $(basename $0) = bhj-short-notify; then
+    (
+	sleep 5
+	setsid notification-manager "$label"
+    )&
+fi

@@ -284,7 +284,6 @@ import pickle
 # python-indent: 4 #
 # End: #
 " nil 0)
-    ("signal" "SIGNAL" nil 3)
     ("slef" "self" nil 4)
     ("true" "True" nil 2)
    ))
@@ -309,8 +308,9 @@ else
     cd `pwd`/`dirname $0`;
 fi
 " nil 0)
-    ("qe" "2>/dev/null" nil 1)
-    ("qq" ">/dev/null 2>&1" nil 6)
+    ("eo" "2>&1" nil 3)
+    ("qe" "2>/dev/null" nil 2)
+    ("qq" ">/dev/null 2>&1" nil 7)
     ("shmode" "# Local variables:
 # mode: shell-script
 # sh-basic-offset: 4

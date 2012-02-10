@@ -22,6 +22,7 @@
     (setq locate-command "locateEmacs.sh")))
 
 (when (eq system-type 'windows-nt)
+  (setq org-jira-working-dir "~/.org-jira")
   (require 'cygwin-mount)
   (cygwin-mount-activate)
   (require 'w32-symlinks))
@@ -47,13 +48,13 @@
 
 
   (set-fontset-font (frame-parameter nil 'font)
-		    'han (font-spec :family "Simsun" :size 16))
+		    'han (font-spec :family "Simsun" :size 15))
   (set-fontset-font (frame-parameter nil 'font)
-		    'symbol (font-spec :family "Simsun" :size 16))
+		    'symbol (font-spec :family "Simsun" :size 15))
   (set-fontset-font (frame-parameter nil 'font)
-		    'cjk-misc (font-spec :family "Simsun" :size 16))
+		    'cjk-misc (font-spec :family "Simsun" :size 15))
   (set-fontset-font (frame-parameter nil 'font)
-		    'bopomofo (font-spec :family "Simsun" :size 16)))
+		    'bopomofo (font-spec :family "Simsun" :size 15)))
 
 (add-to-list 'load-path "~/.emacs_d/weblogger")
 (require 'weblogger)
@@ -465,7 +466,7 @@
 
 (defun bhj-occur-make-errors ()
   (interactive)
-  (let ((bhj-occur-regexp "no rule to\\|failed\\|errors\\|error:"))
+  (let ((bhj-occur-regexp "no rule to\\|failed\\|errors\\|1 error\\b\\|error:"))
     (call-interactively 'bhj-occur)))
 
 
@@ -555,6 +556,7 @@
  '(ecomplete-database-file-coding-system (quote utf-8))
  '(edebug-eval-macro-args t)
  '(emacs-lisp-mode-hook (quote ((lambda nil (make-local-variable (quote cscope-symbol-chars)) (setq cscope-symbol-chars "-A-Za-z0-9_")))))
+ '(fill-column 80)
  '(font-lock-maximum-decoration 2)
  '(gdb-find-source-frame t)
  '(gdb-same-frame t)
@@ -599,7 +601,8 @@
  '(tramp-syntax (quote ftp))
  '(tramp-verbose 0)
  '(transient-mark-mode t)
- '(url-proxy-services (quote (("http" . "localhost:8580") ("no_proxy" . "^[^.]*$\\|sina.com"))))
+ '(twittering-convert-fix-size nil)
+ '(url-proxy-services (quote (("http" . "127.0.0.1:8580") ("no_proxy" . "^[^.]*$\\|sina.com"))))
  '(user-full-name "Bao Haojun")
  '(w32-symlinks-handle-shortcuts t)
  '(w32-use-w32-font-dialog nil)
@@ -2085,5 +2088,107 @@ criteria can be provided via the optional match-string argument "
   (with-temp-buffer
     (insert str)
     (kill-region (point-min) (point-max))))
+
+(setq twittering-use-master-password t)
+(defun insert-today ()
+  (interactive)
+  (insert (shell-command-to-string "today")))
+
+(global-set-key [(meta shift ?d)] 'insert-today)
+
+(defface erc-header-line-disconnected
+  '((t (:foreground "black" :background "indianred")))
+  "Face to use when ERC has been disconnected.")
+ 
+(defun erc-update-header-line-show-disconnected ()
+  "Use a different face in the header-line when disconnected."
+  (erc-with-server-buffer
+    (cond ((erc-server-process-alive) 'erc-header-line)
+          (t 'erc-header-line-disconnected))))
+          (setq erc-header-line-face-method 'erc-update-header-line-show-disconnected)
+ 
+(setq erc-header-line-face-method 'erc-update-header-line-show-disconnected)
+
+(setq erc-log-channels-directory "~/.emacs.d/logs/")
+(setq erc-save-buffer-on-part nil)
+(setq erc-save-queries-on-quit nil
+      erc-log-write-after-send t
+      erc-log-write-after-insert t)
+
+(setq erc-hide-list '("MODE"))
+(defun erc-ignore-unimportant (msg)
+  (if (or (string-match "*** localhost has changed mode for &bitlbee to" msg)
+          (string-match "Account already online\\|Trying to get all accounts" msg)
+          (string-match "You're already logged in" msg)
+	  (string-match "has quit: Leaving\\|has joined channel" msg)
+          (string-match "Unknown error while loading configuration" msg))
+      (setq erc-insert-this nil)))
+(add-hook 'erc-insert-pre-hook 'erc-ignore-unimportant)
+
+(defvar bitlbee-password (auth-source-user-or-password "password" "localhost" 6667))
+(defun bitlbee-identify ()
+  "If we're on the bitlbee server, send the identify command to the
+ &bitlbee channel."
+  (when (and (string= "localhost" erc-session-server)
+             (string= "&bitlbee" (buffer-name)))
+    (erc-message "PRIVMSG" (format "%s identify %s"
+                                   (erc-default-target)
+                                   bitlbee-password))))
+(add-hook 'erc-join-hook 'bitlbee-identify)
+ 
+(defun bitlbee-connect ()
+  (interactive)
+  (save-window-excursion
+    (when (get-buffer "&bitlbee")
+      (switch-to-buffer "&bitlbee")
+      (erc-message "PRIVMSG" (concat (erc-default-target) " identify " bitlbee-password))
+      (erc-message "PRIVMSG" (concat (erc-default-target) " account on")))))
+
+(setq erc-keywords '((".*Online.*" (:foreground "green"))
+                     (".*Busy" (:foreground "red"))
+                     (".*Away" (:foreground "red"))
+                     (".*Idle" (:foreground "orange"))
+                     ))
+
+(defun erc-notify-on-msg (msg)
+  (if (string-match "bhj:" msg)
+      (shell-command (concat "bhj-notify erc " 
+			     (shell-quote-argument msg)))))
+(add-hook 'erc-insert-pre-hook 'erc-notify-on-msg)
+
+(setq bitlbee-target "")
+(defun bitlbee-update-target (msg)
+  (if (string-match "\\([^:]*: \\)" msg)
+      (setq bitlbee-target (match-string 1 msg))
+    (if (not (or
+              (string-match "account" msg)
+              (string-match "help" msg)
+              (string-match "identify" msg)
+              (string-match "blist" msg)))
+        (setq str (concat bitlbee-target msg)))))
+(add-hook 'erc-send-pre-hook 'bitlbee-update-target)
+
+(erc :server "localhost" :port "6667" :nick "bhj" :password bitlbee-password)
+
+(defun goto-line-not-containing (word)
+  "look forward to find a line not containing WORD, maybe because
+we are not interested in those lines that do."
+  (interactive (list (read-string "What word you want to skip? ")))
+  (let* ((temp-buffer (get-buffer-create "*goto-line-not-containing*")))
+    (goto-line 
+     (save-excursion
+       (save-window-excursion
+	 (shell-command-on-region (point-min) 
+				  (point-max)
+				  (format 
+				   "export CURRENTLINE=%s; grep -i -v -e %s -n | perl -ne 'chomp; s/:.*//; if ($_ > $ENV{CURRENTLINE}) { print $_ . \"\\n\";}'"
+				   (line-number-at-pos)
+				   (shell-quote-argument word))
+				  temp-buffer)
+	 
+	 (string-to-number
+	  (with-current-buffer temp-buffer
+	    (goto-char (point-min))
+	    (current-line-string))))))))
 
 (server-start)

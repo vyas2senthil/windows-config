@@ -83,16 +83,23 @@ for(@sorted) {
   }
 }
 
-for (@words) {
+my $max = scalar @words - 1;
+$max = 19 if $max >= 20;
+for (@words[0..$max]) {
   if ($match == 1) {
     print $print_prefix . $_ . "\n";
-  } else {
-    if ($is_prefix) {
+  } elsif ($_) {
+    if ($is_prefix and not $words_file) { #sometimes we do not want fill out the common prefix
       s/\s+/./g;
       printf "%s: %d\n", $_, $count++;
     } else {
 	print $log_ "is_prefix not true\n";
-	printf "%d: %s\n", $count++, $_;
+	my $fmt = $max < 10 ? "%d" : "%02d";
+	printf "$fmt: %s\n", $count++, $_;
     }
-  }    
+  }
+}
+
+if (@words >= 20) {
+  printf "%02d total zzz... please use hil (history list)!", scalar @words;
 }

@@ -15,7 +15,12 @@
                                                (window-put window 'depth 0))
                                              (stacking-order))))
 
-
+(bind-keys window-keymap "Super-F4" 
+	     (lambda ()
+	       (let ((window (input-focus)))
+		 (unless (equal (window-class window) "Xfce4-panel")
+		   (delete-window-safely window)))))
+	     
 (defun bhj-activate-window (window)
   (if (window-iconified-p window)
       (uniconify-window window))
@@ -50,7 +55,7 @@
  '(
    ("Super-e" "emacs" "emacs.bhj")
    ("Super-r" "grun" "grun")
-   ("Super-p" "gnome-terminal" "gnome-terminal --hide-menubar -e ~/bin/myscr")
+   ("Super-t" "gnome-terminal" "gnome-terminal --hide-menubar -e ~/bin/myscr")
    ("Super-C-d" (lambda (w) (string-match "my-dict" (window-name w) 0 t)) "gnome-terminal -t my-dict --hide-menubar -e ~/bin/linux/my-dict")
    ("Meta-Scroll_Lock" "hello world no such thing" "/usr/bin/gnome-screensaver-command -a -l")
    ("Super-x" "xcalc" "xcalc")
