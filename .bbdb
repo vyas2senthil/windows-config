@@ -62,6 +62,7 @@
 ["Leo" "Yao" nil nil nil nil ("shihongy@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Vincent" "Ying" nil nil nil nil ("vincenty@marvell.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["Tide" "Yin" nil nil nil nil ("taoyin@marvell.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
+["Qianqi" "Zhai" nil nil nil nil ("qqzhai@marvell.com") ((creation-date . "2012-02-24") (timestamp . "2012-02-24")) nil]
 ["Bin" "Zhang" nil nil nil nil ("binzhang@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Chao" "Zhang" nil nil nil nil ("chaozh@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Chong" "Zhang" nil nil nil nil ("chongz@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
