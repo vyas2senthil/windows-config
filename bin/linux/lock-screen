@@ -1,0 +1,4 @@
+#!/bin/bash
+ps-kill-all gnome-screensaver
+slock
+ps-kill-all gnome-screensaver

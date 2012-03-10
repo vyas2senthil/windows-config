@@ -216,43 +216,26 @@ sub do_convert() {
 }
 
 my $bar = <<EOF;
-<script type="text/javascript">
-function DoDict(form)
-{
-top.location="/search-dict/"+form.data.value;
-}
-</script>
-<script type="text/javascript">
-function DoDictMatching(form)
-{
-top.location="/search-dict-matching/"+form.data.value;
-}
-</script><script type="text/javascript">
-function DoDefines(form)
-{
-top.location="/search-dict-defines/"+form.data.value;
-}
-</script>
 
 <table>
 <tr>
 <td>
-<form name="SearchForm" onSubmit="DoDict(this.form)" method="get" action="/search-dict/">
+<form name="SearchForm" action="/search-dict/">
 Search dict:
 <input type="text" name="data" size="15">
-<input type="button" value="Submit" onclick="DoDict(this.form)">
+<input type=submit value="Submit" >
 </form>
 </td><td>
-<form name="SearchForm" onSubmit="DoDefines(this.form)" method="get" action="/search-dict-defines/">
+<form name="SearchForm" action="/search-dict-defines/">
 Search defines:
 <input type="text" name="data" size="15">
-<input type="button" value="Submit" onclick="DoDefines(this.form)">
+<input type=submit value="Submit" >
 </form>
 </td><td>
-<form name="SearchForm" onSubmit="DoDictMatching(this.form)" method="get" action="/search-dict-matching/">
+<form name="SearchForm" action="/search-dict-matching/">
 Search matching
 <input type="text" name="data" size="15">
-<input type="button" value="Submit" onclick="DoDictMatching(this.form)">
+<input type=submit value="Submit" >
 </form>
 </td></tr></table>
 EOF
@@ -288,18 +271,31 @@ sub get_definition($) {
   debug "$md5_dir\n";
 
   my $dict_html = "";
+  my %entry_html_files;
   for (glob("$md5_dir/* $md5_dir/.*")) {
     -f $_ or next;
 
     if (get_md5(substr $_, 6) eq $key_md5) {
       open(my $entry_file, "<", $_) or die "can not open $_ for read";
-      $dict_html .= "<hr class='subsep' />";
       while (<$entry_file>) {
-	s#\036#/dict-images/#g; s#\037##g;
-	$dict_html .= $_;
+	debug "$word is defined in $_";
+	chomp();
+	$entry_html_files{$_} = 1;
       }
     }
   }
+
+  my $num_of_def = 0;
+  my %entry_md5s;
+  for (sort {-s $b <=> -s $a} keys %entry_html_files) {
+    my $dict_data = qx(cat $_|tr -d "\r");
+    unless (exists $entry_md5s{$dict_data}) {
+      $dict_html .= "<hr class='sep' />";
+      $entry_md5s{$dict_data} = 1;
+      $dict_html .= qx(cat $_);
+    }
+  }
+
   return "<div style=\"font-size: xx-large\">$dict_html</div>";
 }
 
@@ -331,9 +327,13 @@ sub dict_defines() {
       if ($next_idx == @words) {
 	$next_idx = 0;
       }
+      my $prev_idx = ($next_idx - 2 + @words) % @words;
       my $next_display = $words[$next_idx];
+      my $prev_display = $words[$prev_idx];
       my $a = uri_escape($next_display);
-      print "<br><a href='/dict-defines-sub/$defining_word/$a'>next: $next_display</a><br/><br/><hr><br/>";
+      my $b = uri_escape($prev_display);
+      print "<br><a href='/dict-defines-sub/$defining_word/$b'>prev: $prev_display</a>";
+      print "&nbsp;<a href='/dict-defines-sub/$defining_word/$a'>next: $next_display</a><br/><br/><hr><br/>";
       last;
     }
     for (@words) {
@@ -343,12 +343,79 @@ sub dict_defines() {
   }
 }
 
-chdir("/home/bhj/external/stardict/") or die "can not chdir";
+sub dict_matching() {
+  my $pattern = $ARGV[0];
+  my $filter;
+  my $filter_save;
+  my $saved_pattern;
+  if (-e glob("~/.logs/dict_matching.txt")) {
+    open($filter, "<", glob("~/.logs/dict_matching.txt")) or die "can not open dict_matching.txt";
+    chomp($saved_pattern = <$filter>);
+  }
+
+  unless($pattern eq $saved_pattern) {
+    close($filter) if $filter;
+    open($filter, "-|", "grep", "-i", "-P", "$pattern", "words.list") or die "can not open filter";
+    open($filter_save, ">", glob("~/.logs/dict_matching.txt")) or die "can not open dict_matching.txt";
+    print $filter_save "$pattern\n";
+  }
+
+
+  my $num_matching = 0;
+  my @words;
+  print $style;
+  while (<$filter>) {
+    last unless $num_matching++ < 5000;
+    print $filter_save $_ if $filter_save;
+    chomp;
+    push @words, $_;
+  }
+  print "<h2>" . $pattern . " matches " . scalar(@words) . " words</h2>";
+  my $next_idx = 0;
+  @words = sort {lc $a cmp lc $b} @words;
+
+  my $to_display = $words[0];
+  if (@ARGV == 2) {
+    $to_display = $ARGV[1] unless not $ARGV[1];
+  }
+
+  for (@words) {
+    $next_idx++;
+    if ($to_display ne $_) {
+      next;
+    }
+    my $def = get_definition($_);
+    $def =~ s/\bh1>/h3>/g;
+    print $def;
+    if ($next_idx == @words) {
+      $next_idx = 0;
+    }
+
+    my $prev_idx = ($next_idx - 2 + @words) % @words;
+    my $next_display = $words[$next_idx];
+    my $prev_display = $words[$prev_idx];
+    my $a = uri_escape($next_display);
+    my $b = uri_escape($prev_display);
+    print "<br><a href='/dict-matching-sub/$pattern/$b'>prev: $prev_display</a>";
+    print "&nbsp;<a href='/dict-matching-sub/$pattern/$a'>next: $next_display</a><br/><br/><hr><br/>";
+    last;
+  }
+  for (@words) {
+    my $a = uri_escape($_);
+    print "<a href='/dict-matching-sub/$pattern/$a'>$_</a> "
+  }
+  close($filter_save) if $filter_save;
+  close($filter);
+}
+
+chdir("/home/bhj/external/ahd/") or die "can not chdir";
 if ($0 =~ m,/?stardict-convert.pl$,) {
   do_convert();
 } elsif ($0 =~ m,/?dict$,) {
   dict();
 } elsif ($0 =~ m,/?dict-defines$,) {
   dict_defines();
+} elsif ($0 =~ m,/?dict-matching$,) {
+  dict_matching();
 }
 close(STDOUT);

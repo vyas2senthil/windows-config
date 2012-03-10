@@ -466,7 +466,7 @@
 
 (defun bhj-occur-make-errors ()
   (interactive)
-  (let ((bhj-occur-regexp "no rule to\\|failed\\|[0-9]+elapsed \\|Error [0-9]+\\|errors\\|1 error\\b\\|error:"))
+  (let ((bhj-occur-regexp "no rule to\\|failed\\|[0-9]+elapsed \\|error [0-9]+\\|because of errors\\|[0-9]+ error\\b\\|error:"))
     (call-interactively 'bhj-occur)))
 
 
@@ -604,6 +604,7 @@
  '(twittering-convert-fix-size nil)
  '(url-proxy-services (quote (("http" . "127.0.0.1:8580") ("no_proxy" . "^[^.]*$\\|sina.com"))))
  '(user-full-name "Bao Haojun")
+ '(visible-bell t)
  '(w32-symlinks-handle-shortcuts t)
  '(w32-use-w32-font-dialog nil)
  '(w3m-default-display-inline-images t)
@@ -1566,6 +1567,14 @@ Starting from DIRECTORY, look upwards for a cscope database."
                                              (buffer-substring-no-properties (point) (line-end-position))))))
                   "&")))
 
+(add-hook 'gnus-summary-mode-hook 
+	  (lambda ()
+	    (define-key gnus-summary-mode-map "v" 'bhj-view-mail-external)))
+				    
+(defun bhj-view-mail-external ()
+  "open the current maildir file in kmail"
+  (interactive)
+  (shell-command (concat "kmail-view " (shell-quote-argument nnmaildir-article-file-name))))
 
 (setq w3m-fill-column 100)
 (require 'guess-offset)
@@ -2100,79 +2109,7 @@ criteria can be provided via the optional match-string argument "
 (global-set-key [(meta shift ?d)] 'insert-today)
 
 (unless (eq system-type 'windows-nt)
-  (defface erc-header-line-disconnected
-    '((t (:foreground "black" :background "indianred")))
-    "Face to use when ERC has been disconnected.")
-  
-  (defun erc-update-header-line-show-disconnected ()
-    "Use a different face in the header-line when disconnected."
-    (erc-with-server-buffer
-      (cond ((erc-server-process-alive) 'erc-header-line)
-	    (t 'erc-header-line-disconnected))))
-  (setq erc-header-line-face-method 'erc-update-header-line-show-disconnected)
-  
-  (setq erc-header-line-face-method 'erc-update-header-line-show-disconnected)
-
-  (setq erc-log-channels-directory "~/.emacs.d/logs/")
-  (setq erc-save-buffer-on-part nil)
-  (setq erc-save-queries-on-quit nil
-	erc-log-write-after-send t
-	erc-log-write-after-insert t)
-
-  (setq erc-hide-list '("MODE"))
-  (defun erc-ignore-unimportant (msg)
-    (if (or (string-match "*** localhost has changed mode for &bitlbee to" msg)
-	    (string-match "Account already online\\|Trying to get all accounts" msg)
-	    (string-match "You're already logged in" msg)
-	    (string-match "has quit: Leaving\\|has joined channel" msg)
-	    (string-match "Unknown error while loading configuration" msg))
-	(setq erc-insert-this nil)))
-  (add-hook 'erc-insert-pre-hook 'erc-ignore-unimportant)
-
-  (defvar bitlbee-password (auth-source-user-or-password "password" "localhost" 6667))
-  (defun bitlbee-identify ()
-    "If we're on the bitlbee server, send the identify command to the
- &bitlbee channel."
-    (when (and (string= "localhost" erc-session-server)
-	       (string= "&bitlbee" (buffer-name)))
-      (erc-message "PRIVMSG" (format "%s identify %s"
-				     (erc-default-target)
-				     bitlbee-password))))
-  (add-hook 'erc-join-hook 'bitlbee-identify)
-  
-  (defun bitlbee-connect ()
-    (interactive)
-    (save-window-excursion
-      (when (get-buffer "&bitlbee")
-	(switch-to-buffer "&bitlbee")
-	(erc-message "PRIVMSG" (concat (erc-default-target) " identify " bitlbee-password))
-	(erc-message "PRIVMSG" (concat (erc-default-target) " account on")))))
-
-  (setq erc-keywords '((".*Online.*" (:foreground "green"))
-		       (".*Busy" (:foreground "red"))
-		       (".*Away" (:foreground "red"))
-		       (".*Idle" (:foreground "orange"))
-		       ))
-
-  (defun erc-notify-on-msg (msg)
-    (if (string-match "bhj:" msg)
-	(shell-command (concat "bhj-notify erc " 
-			       (shell-quote-argument msg)))))
-  (add-hook 'erc-insert-pre-hook 'erc-notify-on-msg)
-
-  (setq bitlbee-target "")
-  (defun bitlbee-update-target (msg)
-    (if (string-match "\\([^:]*: \\)" msg)
-	(setq bitlbee-target (match-string 1 msg))
-      (if (not (or
-		(string-match "account" msg)
-		(string-match "help" msg)
-		(string-match "identify" msg)
-		(string-match "blist" msg)))
-	  (setq str (concat bitlbee-target msg)))))
-  (add-hook 'erc-send-pre-hook 'bitlbee-update-target)
-
-  (erc :server "localhost" :port "6667" :nick "bhj" :password bitlbee-password))
+  (load-file "~/.emacs_d/lisp/my-erc-config.el"))
 
 (defun goto-line-not-containing (word)
   "look forward to find a line not containing WORD, maybe because
@@ -2194,5 +2131,14 @@ we are not interested in those lines that do."
 	  (with-current-buffer temp-buffer
 	    (goto-char (point-min))
 	    (current-line-string))))))))
+(defun bhj-do-dictionry (word)
+  "lookup the current word (or region) in dictionary"
+  (interactive
+   (list (if mark-active 
+	     (buffer-substring-no-properties (region-beginning)
+					     (region-end))
+	   (current-word))))
+  (w3m-goto-url (format "http://localhost:8000/dict/%s" word)))
 
+(define-key esc-map [(meta d)] 'bhj-do-dictionry)
 (server-start)
