@@ -1,3 +1,4 @@
+set -x
 if [ ! -d /system/debian/usr ]; then
     mount -w -o loop -t ext4 /sdcard/debian.img /system/debian
 fi
@@ -28,10 +29,18 @@ if [ -d /system/debian/dev/.udev ] ; then
    mount -o bind /dev /system/debian/dev
    mount -o bind /dev/pts /system/debian/dev/pts
    mount -o bind /dev/shm /system/debian/dev/shm
+   for x in system data cache factory d acct; do
+       mkdir -p /system/debian/android/$x
+       mount -o bind /$x /system/debian/android/$x
+   done
 fi
 
 # start debian ssh
-export PATH=$PATH:/bin:/usr/bin:/sbin:/usr/sbin
+export PATH=/bin:/usr/bin:/sbin:/usr/sbin:$PATH 
+# must ensure linux standard paths come before android paths, or else the wrong
+# version will be used and cause segfault, because the /system/ etc. also are
+# mounted (and symlinked) under the debian chroot jail.
+
 chroot /system/debian /usr/sbin/service openbsd-inetd start
 
 # mount sd in debian

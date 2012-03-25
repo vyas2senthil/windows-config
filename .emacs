@@ -6,6 +6,7 @@
 (setq load-path
       (nconc (list (expand-file-name "~/.emacs_d/lisp")
 		   (expand-file-name "~/.emacs_d/org-jira")
+		   (expand-file-name "~/.emacs_d/mo-git-blame")
 		   (expand-file-name "~/.emacs_d/lisp/ext"))
 	     load-path))
 
@@ -561,6 +562,7 @@
  '(gdb-find-source-frame t)
  '(gdb-same-frame t)
  '(gdb-show-main t)
+ '(gnus-article-date-headers (quote (local lapsed)))
  '(gnus-ignored-newsgroups "")
  '(gnus-propagate-marks t)
  '(grep-use-null-device nil)
@@ -1574,7 +1576,16 @@ Starting from DIRECTORY, look upwards for a cscope database."
 (defun bhj-view-mail-external ()
   "open the current maildir file in kmail"
   (interactive)
-  (shell-command (concat "kmail-view " (shell-quote-argument nnmaildir-article-file-name))))
+  ;(defun nnmaildir-request-article (num-msgid &optional gname server to-buffer)
+  (let ((article_id gnus-current-article))
+    (with-temp-buffer
+      (nnmaildir-request-article 
+       article_id
+       gnus-newsgroup-name
+       (replace-regexp-in-string ".*:" "" (gnus-group-server gnus-newsgroup-name))
+       (current-buffer))))
+  (let ((default-directory "/"))
+    (shell-command (concat "kmail-view " (shell-quote-argument nnmaildir-article-file-name)))))
 
 (setq w3m-fill-column 100)
 (require 'guess-offset)
@@ -2141,4 +2152,58 @@ we are not interested in those lines that do."
   (w3m-goto-url (format "http://localhost:8000/dict/%s" word)))
 
 (define-key esc-map [(meta d)] 'bhj-do-dictionry)
+
+(defun bhj-open-android-doc-on-java-buffer ()
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (search-forward-regexp "^\\s *package ")
+    (let ((package-name 
+	   (buffer-substring-no-properties
+	    (point)
+	    (1- (line-end-position))))
+	  (doc-prefix "file:///home/bhj/bin/linux/ext/android-sdk-linux_86/docs/reference")
+	  (html-name (replace-regexp-in-string 
+		      ".java$" ".html" 
+		      (replace-regexp-in-string
+		       ".*/" ""
+		       (buffer-file-name))))
+	  (default-directory (expand-file-name "~")))
+      (shell-command (format "of %s/%s/%s"
+				   doc-prefix
+				   (replace-regexp-in-string
+				    "\\."
+				    "/"
+				    package-name)
+				   html-name)))))
+			 
+(eval-after-load "cc-mode.el"
+  (define-key java-mode-map (kbd "M-s d") 'bhj-open-android-doc-on-java-buffer))
+
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
+
+(require 'xclip)
+(turn-on-xclip)
+
+(add-to-list 'load-path (expand-file-name "~/.emacs_d/emacs-eclim/"))
+;; only add the vendor path when you want to use the libraries provided with emacs-eclim
+(add-to-list 'load-path (expand-file-name "~/.emacs_d/emacs-eclim/vendor"))
+(require 'eclim)
+
+(setq eclim-auto-save t)
+(global-eclim-mode)
+(setq eclim-executable (expand-file-name "~/external/eclipse/eclim"))
+
+(defadvice hack-dir-local-variables
+  (around hack-remote-file-p first activate)
+  "Hack (hack-dir-local-variables) to make it work with remote files."
+  (require 'cl)
+  (let ((saved-file-remote-p (symbol-function 'file-remote-p)))
+    (flet ((file-remote-p (file &optional identification connected)
+			  (if (string-match "^/scp:" file)
+			      nil
+			    (funcall saved-file-remote-p file identification connected))))
+      ad-do-it)))
+
 (server-start)
