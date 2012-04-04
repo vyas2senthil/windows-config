@@ -467,7 +467,7 @@
 
 (defun bhj-occur-make-errors ()
   (interactive)
-  (let ((bhj-occur-regexp "no rule to\\|failed\\|[0-9]+elapsed \\|error [0-9]+\\|because of errors\\|[0-9]+ error\\b\\|error:"))
+  (let ((bhj-occur-regexp "\\*\\*\\*\\|no rule to\\|failed\\|[0-9]+elapsed \\|error [0-9]+\\|because of errors\\|[0-9]+ error\\b\\|error:"))
     (call-interactively 'bhj-occur)))
 
 
@@ -562,6 +562,7 @@
  '(gdb-find-source-frame t)
  '(gdb-same-frame t)
  '(gdb-show-main t)
+ '(gnus-article-date-headers (quote (local lapsed)))
  '(gnus-ignored-newsgroups "")
  '(gnus-propagate-marks t)
  '(grep-use-null-device nil)
@@ -1575,7 +1576,16 @@ Starting from DIRECTORY, look upwards for a cscope database."
 (defun bhj-view-mail-external ()
   "open the current maildir file in kmail"
   (interactive)
-  (shell-command (concat "kmail-view " (shell-quote-argument nnmaildir-article-file-name))))
+  ;(defun nnmaildir-request-article (num-msgid &optional gname server to-buffer)
+  (let ((article_id gnus-current-article))
+    (with-temp-buffer
+      (nnmaildir-request-article 
+       article_id
+       gnus-newsgroup-name
+       (replace-regexp-in-string ".*:" "" (gnus-group-server gnus-newsgroup-name))
+       (current-buffer))))
+  (let ((default-directory "/"))
+    (shell-command (concat "kmail-view " (shell-quote-argument nnmaildir-article-file-name)))))
 
 (setq w3m-fill-column 100)
 (require 'guess-offset)
@@ -2184,5 +2194,16 @@ we are not interested in those lines that do."
 (setq eclim-auto-save t)
 (global-eclim-mode)
 (setq eclim-executable (expand-file-name "~/external/eclipse/eclim"))
+
+(defadvice hack-dir-local-variables
+  (around hack-remote-file-p first activate)
+  "Hack (hack-dir-local-variables) to make it work with remote files."
+  (require 'cl)
+  (let ((saved-file-remote-p (symbol-function 'file-remote-p)))
+    (flet ((file-remote-p (file &optional identification connected)
+			  (if (string-match "^/scp:" file)
+			      nil
+			    (funcall saved-file-remote-p file identification connected))))
+      ad-do-it)))
 
 (server-start)
