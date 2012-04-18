@@ -80,6 +80,7 @@
 ["Richard" "Zhou" nil nil nil nil ("jizhou@marvell.com") ((creation-date . "2012-02-06") (timestamp . "2012-02-06")) nil]
 ["Wei" "Zhou" nil nil nil nil ("weizhou@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Weifeng" "Zhou" nil nil nil nil ("weifzhou@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
+["Tom" "Zhuang" nil nil nil nil ("yzhuang@marvell.com") ((creation-date . "2012-04-17") (timestamp . "2012-04-17")) nil]
 ["" "任捷" nil nil nil nil ("dickrj@163.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["何志伟" "" nil nil nil nil ("zwhe@hdu.edu.cn") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["" "何治" nil nil nil nil ("hezhi77@gmail.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
