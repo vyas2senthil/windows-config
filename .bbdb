@@ -32,6 +32,7 @@
 ["Xiaoqian" "Guo" nil nil nil nil ("xqguo@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Vivian" "Gu" nil nil nil nil ("vivgu@marvell.com") ((creation-date . "2012-01-12") (timestamp . "2012-01-12")) nil]
 ["Shuanghuan" "Han" nil nil nil nil ("shhan@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
+["Bao" "Haojun" nil nil nil nil ("baohaojun@gmail.com") ((creation-date . "2012-09-19") (timestamp . "2012-09-19")) nil]
 ["Carton" "He" nil nil nil nil ("qhe@marvell.com") ((creation-date . "2012-06-15") (timestamp . "2012-06-15")) nil]
 ["Johnny" "He" nil nil nil nil ("yhe9@marvell.com") ((creation-date . "2012-06-05") (timestamp . "2012-06-05")) nil]
 ["Ning" "He" nil nil nil nil ("ninghe@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
