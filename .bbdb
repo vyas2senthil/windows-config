@@ -62,6 +62,7 @@
 ["Yifei" "Luo" nil nil nil nil ("yifeiluo@marvell.com") ((creation-date . "2012-07-27") (timestamp . "2012-07-27")) nil]
 ["Meggie" "Ma" nil nil nil nil ("meggie.ma@itecpower.com.cn") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Xiaoya" "Mi" nil nil nil nil ("xiaoyami@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
+["networkmanager-list" "" nil nil nil nil ("networkmanager-list@gnome.org") ((creation-date . "2012-10-11") (timestamp . "2012-10-11")) nil]
 ["nicholas" "" nil nil nil nil ("nicholas.dokos@hp.com") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
 ["Sufen" "Niu" nil nil nil nil ("sufenniu@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["OSiUX" "" nil nil nil nil ("xuiso@osiux.com.ar") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
