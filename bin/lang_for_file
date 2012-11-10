@@ -16,6 +16,7 @@ unless (-e $globalrc) {
 }
 
 my $source_file = $ARGV[0];
+my $source_path = $source_file;
 $source_file =~ s,.*/,,;
 $source_file =~ s,\.gz$,,;
 
@@ -58,5 +59,20 @@ foreach my $lang (keys %lang_map) {
 	    exit(0);
 	}
     }
+}
+
+chomp(my $interp = qx(cat $source_path|head -n 1));
+
+if ($interp =~ m,^#!\s*\S*/(\S+),) {
+    $interp = $1;
+    if ($interp eq "env" and $' =~ m/\s+(\S+)/) { #' fix the fontlock
+	$interp = $1;
+    } 
+    my %unk_lang_map = (
+	"bash" => "sh",
+	);
+
+    print ($unk_lang_map{$interp} or $interp);
+    exit 0;
 }
 print "unknown";
