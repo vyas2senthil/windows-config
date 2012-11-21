@@ -26,7 +26,6 @@
 ["Lianping" "Gao" nil nil nil nil ("lpgao@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Steven" "Gao" nil nil nil nil ("zgao2@marvell.com") ((creation-date . "2012-06-04") (timestamp . "2012-06-04")) nil]
 ["Yang" "Gao" nil nil nil nil ("yanggao@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
-["GR-Beijing-Everyone" "" nil nil nil nil ("GR-Beijing-Everyone@marvell.com") ((creation-date . "2012-06-13") (timestamp . "2012-06-13")) nil]
 ["GR-BPE-Status-Report" "" nil nil nil nil ("GR-BPE-Status-Report@marvell.com") ((creation-date . "2012-03-31") (timestamp . "2012-03-31")) nil]
 ["GR-MTBL-Cellular-RnD" "" ("whole team") nil nil nil ("GRMTBLCellularRnD@marvell.com") ((creation-date . "2012-01-13") (timestamp . "2012-07-04")) nil]
 ["Gavin" "Gu" nil nil nil nil ("qgu2@marvell.com") ((creation-date . "2012-06-04") (timestamp . "2012-06-04")) nil]
