@@ -75,6 +75,7 @@
 ["OSiUX" "" nil nil nil nil ("xuiso@osiux.com.ar") ((creation-date . "2012-01-06") (timestamp . "2012-01-06")) nil]
 ["Magic" "Pan" nil nil nil nil ("mpan@marvell.com") ((creation-date . "2012-06-04") (timestamp . "2012-06-04")) nil]
 ["Xu" "Peng" nil nil nil nil ("pengxu@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
+["Alexey" "Perevalov" nil nil nil nil ("alexej.perevalov@gmail.com") ((creation-date . "2012-12-24") (timestamp . "2012-12-24")) nil]
 ["Chen" "Qian" nil nil nil nil ("jeffqian@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Zhiheng" "Qi" nil nil nil nil ("zhqi@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Hailin" "Ren" nil nil nil nil ("hailinr@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
