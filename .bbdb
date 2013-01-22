@@ -54,6 +54,7 @@
 ["Russell" "King" nil nil nil nil ("linux@arm.linux.org.uk") ((creation-date . "2013-01-17") (timestamp . "2013-01-17")) nil]
 ["Greg" "Kroah-Hartman" nil nil nil nil ("gregkh@linuxfoundation.org") ((creation-date . "2013-01-17") (timestamp . "2013-01-17")) nil]
 ["James" "Lai" nil nil nil nil ("mlai1@marvell.com") ((creation-date . "2012-06-05") (timestamp . "2012-06-05")) nil]
+["Hao" "Lan" nil nil nil nil ("lanhao@marvell.com") ((creation-date . "2013-01-22") (timestamp . "2013-01-22")) nil]
 ["Leo" "Lei" nil nil nil nil ("glei@marvell.com") ((creation-date . "2012-03-30") (timestamp . "2012-03-30")) nil]
 ["Andy" "Lester" ("andy") nil nil nil ("andy@petdance.com") ((creation-date . "2012-12-18") (timestamp . "2012-12-18")) nil]
 ["Hong" "Liang" nil nil nil nil ("hongl@marvell.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
