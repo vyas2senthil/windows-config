@@ -13,6 +13,7 @@
 ["Jialin" "Chen" nil nil nil nil ("chenjl@marvell.com") ((creation-date . "2012-06-11") (timestamp . "2012-06-11")) nil]
 ["Xiaoyi" "Chen" nil nil nil nil ("xiaoyich@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Xingrun" "Chen" nil nil nil nil ("xrchen@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
+["Yang" "Chen" nil nil nil nil ("cy@marvell.com") ((creation-date . "2013-01-25") (timestamp . "2013-01-25")) nil]
 ["Yunchao" "Chen" nil nil nil nil ("chenyc@marvell.com") ((creation-date . "2012-01-11") (timestamp . "2012-01-11")) nil]
 ["Chengfeng" "Chu" nil nil nil nil ("cfchu@marvell.com") ((creation-date . "2013-01-17") (timestamp . "2013-01-17")) nil]
 ["Alan" "Cox" nil nil nil nil ("alan@lxorguk.ukuu.org.uk" "alan@linux.intel.com") ((creation-date . "2013-01-17") (timestamp . "2013-01-17")) nil]
