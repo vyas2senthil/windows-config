@@ -114,6 +114,7 @@
 ["Xianjin" "Wang" nil nil nil nil ("wxianjin@marvell.com") ((creation-date . "2012-10-10") (timestamp . "2012-10-10")) nil]
 ["Xiaodong" "Wang" nil nil nil nil ("wangxd@marvell.com") ((creation-date . "2013-01-14") (timestamp . "2013-01-14")) nil]
 ["Yaya" "Wang" nil nil nil nil ("yywang@marvell.com") ((creation-date . "2012-05-14") (timestamp . "2012-05-14")) nil]
+["Alina" "Wei" nil nil nil nil ("alinawei@marvell.com") ((creation-date . "2013-03-22") (timestamp . "2013-03-22")) nil]
 ["Lei" "Wen" nil nil nil nil ("leiwen@marvell.com") ((creation-date . "2013-01-18") (timestamp . "2013-01-18")) nil]
 ["Chendun" "Wu" nil nil nil nil ("filon2008@gmail.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["Guizhou" "Wu" nil nil nil nil ("gzwu@marvell.com") ((creation-date . "2013-01-14") (timestamp . "2013-01-14")) nil]
