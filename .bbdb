@@ -182,6 +182,7 @@
 ["" "刘翔" nil nil nil nil ("lxlotus@hotmail.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["史治国" "" nil nil nil nil ("shizg@zju.edu.cn") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["" "吴皓" nil nil nil nil ("hao.wu79@gmail.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
+["Linost" "客户中心" nil nil nil nil ("info@linost.com") ((creation-date . "2013-03-21") (timestamp . "2013-03-21")) nil]
 ["" "张力" nil nil nil nil ("joe_dodge@163.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["张晓涛" "" nil nil nil nil ("xiaotao.zhang@gmail.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
 ["张维" "" nil nil nil nil ("conanvv@qq.com") ((creation-date . "2012-01-04") (timestamp . "2012-01-04")) nil]
