@@ -9,12 +9,23 @@ my $state_blank = 4;
 my $state = $state_normal;
 my $string_start;
 my $indent;
+
+use Getopt::Long;
+my $nc; # no comment
+my $keep_string; # keep string contents
+my $nm; # no macro
+GetOptions(
+    "nc!" => \$nc,
+    "nm!" => \$nm,
+    "ks!" => \$keep_string,
+    );
+
 unless (@ARGV) {
     @ARGV = ("/dev/stdin");
 }
 
 sub debug(@) {
-    print STDERR "@_\n";
+    #print STDOUT "@_\n";
 }
 
 sub print_line(\@) {
@@ -95,11 +106,11 @@ for my $arg (@ARGV) {
 		    push @line, $c;
 		}
 	    } else {
-		if ($c eq '#') {
+		if ($c eq '#' and not $nm) {
 		    print_line @line;
 		}
 		push @line, $c;
-		if ($line[0] ne "#" and ($c eq ";" or $c eq '{' or $c eq '}')) {
+		if (($nm or $line[0] ne "#") and ($c eq ";" or $c eq '{' or $c eq '}')) {
 		    if ($c eq '}') {
 			$indent--;
 		    }
@@ -109,23 +120,34 @@ for my $arg (@ARGV) {
 		    }		}
 	    }
 	} elsif ($state == $state_string) {
+	    if ($keep_string) {
+		push @line, $string_start;
+	    }
 	    do {
 		if ($c eq $string_start) {
-		    push @line, "$c$c";
+		    if ($keep_string) {
+			push @line, $c;
+		    } else {
+			push @line, "$c$c";
+		    }
 		    $state = $state_normal;
 		    next read_loop;
 		} elsif ($c eq "\n") { # forgive run away string
 		    push @line, "''";
 		    $state = $state_normal;
 		    next read_loop;
+		} elsif ($keep_string) {
+		    push @line, $c;
 		}
 	    } while (read $file, $c, 1);
 	} elsif ($state == $state_block_comment) {
 	    do {
 		undef $unget;
 		if ($c eq "*") {
-		    read $file, $unget, 1 or last read_loop;
-		    if ($unget eq '/') {
+		    unless (read $file, $unget, 1) {
+			last read_loop;
+		    }
+		    if (not $nm and $unget eq '/') {
 			undef $unget;
 			push @line, " " if @line;
 			$state = $state_normal;
@@ -135,7 +157,7 @@ for my $arg (@ARGV) {
 	    } while (($c = $unget) or (read $file, $c, 1));
 	} elsif ($state == $state_blank) {
 	    do {
-		if ($c eq "\n" and @line and $line[0] eq '#') {
+		if ($c eq "\n" and @line and (not $nm and $line[0] eq '#')) {
 		    print_line @line;
 		}
 		unless ($c eq ' ' or $c eq "\t" or $c eq "\f" or $c eq "\n") {

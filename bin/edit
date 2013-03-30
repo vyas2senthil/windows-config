@@ -17,6 +17,7 @@ if ($ARGV[0] =~ m/^\+\d+$/) {
 }
 
 my ($myfile) = ($ARGV[0]);
+shift @ARGV;
 my $remote_ip = $ENV{"REMOTEIP"};
 
 my $protocol = "";
@@ -59,9 +60,9 @@ sub edit_1($)
     if (-e $file) {
 
 	my $file_q = $file = shell_quote($file);
-	chomp($file_q = qx(lookup_file -e -- $file));
+	chomp($file_q = qx(lookup_file -e -r -- $file));
 	if (not $file_q) {
-	    chomp ($file_q = qx(lookup_file -- $file));
+	    chomp ($file_q = qx(lookup_file -r -- $file));
 	}
 	debug "file_q is $file_q";
 	return (@emacsclient, get_emacs_file_name($file_q));
@@ -82,9 +83,9 @@ sub edit_1($)
       }
 
       my $file_q = $file = shell_quote($file);
-      chomp($file_q = qx(lookup_file -e -- $file|head -n 1));
+      chomp($file_q = qx(lookup_file -e -r -- $file|head -n 1));
       if (not $file_q or not -e $file_q) {
-	  chomp($file_q = qx(lookup_file -- $file|head -n 1));
+	  chomp($file_q = qx(lookup_file -r -- $file|head -n 1));
       }
       return (@emacsclient, "+$line", get_emacs_file_name($file_q));
 
@@ -105,7 +106,8 @@ $ssh_cmd
 EOC
   $ssh_cmd = shell_quote($ssh_cmd);
   print "ssh $remote_ip $ssh_cmd";
-  exit(system("ssh $remote_ip $ssh_cmd"));
+  my $res = system("ssh $remote_ip $ssh_cmd");
+  exit $res unless @ARGV;
 } else {
   my @cmd = edit_1($myfile);
   print "will run: ";
@@ -113,5 +115,11 @@ EOC
     print "'$_' ";
   }
   print "\n";
-  exit(system(@cmd));
+  my $res = system(@cmd);
+  exit $res unless @ARGV;
+}
+
+while (@ARGV) {
+    my $arg = shell_quote(shift @ARGV);
+    system("$0 $arg");
 }

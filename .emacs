@@ -258,6 +258,7 @@
 				(".*/Mlog/*" . fundamental-mode)
 				(".*\\.cpp$" . linux-c++-mode)
 				(".*\\.aidl$" . java-mode)
+				(".*\\.mm?$" . objc-mode)
 				("Kbuild*" . makefile-gmake-mode)
 				("makefile*" . makefile-gmake-mode))
 				  auto-mode-alist))
@@ -805,7 +806,6 @@
  '(user-full-name "Bao Haojun")
  '(vc-handled-backends (quote (RCS CVS SVN SCCS Bzr Git Hg)))
  '(vc-ignore-dir-regexp "\\`\\(?:[\\/][\\/][^\\/]+[\\/]\\|/\\(?:net\\|afs\\|\\.\\.\\.\\)/\\)\\'\\|/smb/")
- '(visible-bell t)
  '(w32-symlinks-handle-shortcuts t)
  '(w32-use-w32-font-dialog nil)
  '(w3m-default-display-inline-images t)
@@ -819,17 +819,6 @@
  '(yas/trigger-key "M-TAB"))
 
 ; '(url-proxy-services (quote (("http" . "127.0.0.1:18080") ("no_proxy" . "^[^.]*$\\|sina.com"))))
-
-
-
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(bold-italic ((t (:slant italic :weight bold :family "Consolas"))))
- '(italic ((t (:slant italic :family "Consolas")))))
 
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
@@ -1238,6 +1227,7 @@ Starting from DIRECTORY, look upwards for a cscope database."
 (defconst emacs-mode-ctags-lang-map
   '(("emacs-lisp" . "lisp")
     ("c" . "c++")
+    ("objc" . "ObjectiveC")
     ("makefile-gmake" . "make")
     ("csharp" . "C#")))
 
@@ -2690,6 +2680,18 @@ using ctags-exuberant"
       (while import-list
 	(insert (car import-list))
 	(setq import-list (cdr import-list))))))
+
+(setq ring-bell-function (lambda ()))
+
+(defun source-code-help()
+  (interactive)
+  (let ((word (current-word)))
+    (async-shell-command 
+     (if current-prefix-arg
+	 (format "search-google %s" (shell-quote-argument word))
+       (format "source-code-help %s %s" major-mode word)))))
+
+(global-set-key [(meta s) ?h ?h] 'source-code-help)
       
 (condition-case nil
     (server-start)
